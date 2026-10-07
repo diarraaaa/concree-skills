@@ -1,0 +1,43 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Idea Lab — dossier (pro)</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:#f3f1ee;--ink:#14212e;--navy:#0c1b2a;--green:#2fa84f;--yellow:#f5a623;--red:#e8503a;--teal:#1e8e6e;--char:#1c1c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d6;font-family:"Poppins","Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px 60px;gap:12px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.slide{position:relative;overflow:hidden;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{opacity:.22;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.5) 1px,transparent 1.2px);background-size:5px 5px}
+.tri{position:absolute;width:0;height:0;border-style:solid;border-color:transparent}
+img{display:block}
+
+.slide{width:1920px;height:1358px;zoom:0.36}
+
+.dc{background:#fff}
+.wmbig{position:absolute;right:-180px;bottom:-120px;width:1100px;opacity:.045;transform:rotate(-10deg)}
+.fil{opacity:.14;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%231e8e6e' stroke-width='3'><path d='M20 170 L70 80 L120 170Z'/><path d='M120 70 L150 20 L180 70Z'/><circle cx='40' cy='40' r='14'/></g></svg>");background-size:240px 240px;-webkit-mask-image:radial-gradient(ellipse 50% 60% at 100% 0%,#000,transparent 75%);mask-image:radial-gradient(ellipse 50% 60% at 100% 0%,#000,transparent 75%)}
+.edge{position:absolute;left:0;top:0;bottom:0;width:22px;background:linear-gradient(180deg,var(--green),var(--yellow) 50%,var(--red))}
+.logo{position:absolute;left:110px;top:70px;height:190px}
+.hd{position:absolute;left:110px;top:300px;width:1250px;font:800 100px/1.04 "Poppins";letter-spacing:-2.5px;color:var(--teal)}
+.bd{position:absolute;left:110px;top:560px;width:1180px;font:400 42px/1.55 "Poppins";color:#2a2a28}
+.bd ul{list-style:none;margin-top:18px}
+.bd li{position:relative;padding-left:56px;margin-bottom:16px}
+.bd li::before{content:"";position:absolute;left:0;top:14px;width:0;height:0;border-style:solid;border-width:0 0 30px 26px;border-color:transparent transparent var(--yellow) transparent}
+.bd li:nth-child(2)::before{border-bottom-color:var(--red)}.bd li:nth-child(3)::before{border-bottom-color:var(--green)}
+.sd{position:absolute;right:100px;top:330px;width:420px;border-radius:36px;padding:44px 38px;display:flex;flex-direction:column;align-items:center;gap:56px;background:linear-gradient(180deg,#fbfaf8,#f1efe9);border:1.5px solid #e6e3dc;box-shadow:0 24px 50px rgba(12,27,42,.12)}
+.sd small{font:700 22px "Space Grotesk";letter-spacing:5px;color:#9a9a92}
+.sd img{max-width:320px;max-height:170px}
+.pn{position:absolute;right:110px;bottom:64px;font:800 60px "Space Grotesk";color:var(--teal)}
+.ft{position:absolute;left:110px;bottom:70px;font:500 24px "Poppins";color:#9a9a94;letter-spacing:2px}
+</style></head><body>
+<p class="note">Idea Lab — dossier (pro) · exemple fictif · photos et logos réels (voir assets/photos/credits.json, assets/people/credits.json)</p>
+<div class="slide dc" data-od-id="program-dossier">
+<img class="wmbig" src="../assets/logo-idealab.png" alt="" aria-hidden="true" /><div class="layer fil"></div><div class="edge"></div>
+<img class="logo" src="../assets/logo-idealab.png" alt="Idea Lab" />
+<div class="hd" data-od-id="dossier-headline">Qu'est-ce que le programme Idea Lab ?</div>
+<div class="bd" data-od-id="dossier-body"><p>Idea Lab est un programme d'accompagnement qui aide des porteurs de projets à passer de l'idée à un prototype testé auprès de vrais utilisateurs.</p>
+<p style="margin-top:30px"><b>Chaque cohorte comprend :</b></p>
+<ul><li>des ateliers de découverte client ;</li><li>un accompagnement individuel par des mentors ;</li><li>une journée de présentation devant les partenaires.</li></ul></div>
+<div class="sd" data-od-id="dossier-partners"><small>PARTENAIRES</small><img src="../assets/logo-mesri.png" alt="MESRI" /><img src="../assets/logo-koica.png" alt="KOICA" /><img src="../assets/logo-kpc.png" alt="KPC consortium" /></div>
+<div class="ft">IDEA LAB · PROGRAMME</div><div class="pn">3</div>
+<div class="layer grain" style="opacity:.12"></div></div>
+</body></html>

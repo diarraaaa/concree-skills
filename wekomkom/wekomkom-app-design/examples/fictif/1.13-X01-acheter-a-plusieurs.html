@@ -1,0 +1,138 @@
+<!doctype html>
+<!-- 1.13-X01 · Acheter à plusieurs (fictif) — FICTIONAL page made to test the skill. Close to the existing
+     1.13-P03 « Acheter ensemble » (page 22, node 463:38461): compare before reusing.
+     A group order of packaging between transformatrices nearby. All names, prices and dates are placeholders.
+     Patterns: En-tête Retour, Carte à la une · Sombre (the one dark card), Cartes/Ligne d'information,
+     Statuts/Pastille, Cartes/Avatar (initials stand-in), Démarches/Étape timeline, Cartes/Encadré · Neutre,
+     Actions/Bouton Contour. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Acheter à plusieurs</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .dark .head { display: flex; justify-content: space-between; align-items: center; }
+  .dark .actions { display: flex; gap: var(--wk-space-10); align-items: center; }
+  .gauge { display: flex; flex-direction: column; gap: 8px; }
+  .gauge .bar { height: 8px; border-radius: 4px; background: var(--wk-bg-surface-inverse-raised); overflow: hidden; }
+  .gauge .bar i { display: block; width: 68%; height: 100%; border-radius: 4px; background: var(--wk-control-on); }
+  .gauge .legend { display: flex; justify-content: space-between; font: 600 12px/16px var(--wk-font); color: var(--wk-fg-inverse-muted); }
+  .gauge .legend b { color: var(--wk-fg-inverse); }
+  .amount { font: 700 16px/20px var(--wk-font); color: var(--wk-fg-attention); white-space: nowrap; }
+  .amount.old { font-weight: 600; font-size: 14px; color: var(--wk-fg-muted); text-decoration: line-through; }
+  .people { display: flex; align-items: center; gap: var(--wk-space-15); }
+  .faces { display: flex; }
+  .faces .avatar { margin-left: -10px; }
+  .faces .avatar:first-child { margin-left: 0; }
+  .faces .avatar.more { background: var(--wk-bg-surface-muted); font-size: 12px; color: var(--wk-fg-secondary); }
+  .people p { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .people p b { display: block; font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .source { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-muted); margin-top: var(--wk-space-10); }
+</style>
+</head>
+<body>
+<main class="screen" aria-label="Acheter à plusieurs">
+  <div class="statusbar">
+    <span>9:41</span>
+    <span class="sys">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#000610"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.3-1.3A10.2 10.2 0 0 0 8 .4C5.2.4 2.6 1.5.7 3.3L2 4.6a8.4 8.4 0 0 1 6-2.4Zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.3-1.3A6.6 6.6 0 0 0 8 4c-1.8 0-3.4.7-4.7 1.8l1.3 1.3c.9-.8 2.1-1.3 3.4-1.3Zm0 3.6c-.6 0-1.1.2-1.5.6L8 11.5l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+    </span>
+  </div>
+
+  <!-- Navigation/En-tête · Retour -->
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="title"><small>Marchés</small><b>Acheter à plusieurs</b></div>
+    <div class="round" aria-label="Partager"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></div>
+  </header>
+
+  <div class="content">
+    <!-- Carte à la une · Sombre — the one dark card -->
+    <section class="dark">
+      <div class="head">
+        <span class="pill on-dark">Commande groupée</span>
+        <span class="pill on-dark">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
+          Jusqu’au 20 oct.
+        </span>
+      </div>
+      <h2>Sacs kraft 1 kg pour ton mil transformé</h2>
+      <p>Seule : 120 FCFA le sac. <span class="accent">À plusieurs : 85 FCFA.</span></p>
+      <!-- Retours/Progression · Barre -->
+      <div class="gauge" aria-label="3 400 sacs sur 5 000">
+        <div class="bar"><i></i></div>
+        <div class="legend"><span><b>3 400 sacs</b> réunis</span><span>Il en faut 5 000</span></div>
+      </div>
+      <div class="actions">
+        <div class="btn white grow">Rejoindre la commande</div>
+        <div class="listen" aria-label="Écouter"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- Cartes/Ligne d’information — ta part -->
+    <section>
+      <h3 class="section-title">Ta part</h3>
+      <p class="section-sub">Calculé sur tes ventes du mois dernier. Tu peux changer la quantité.</p>
+      <div class="card tight">
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linejoin="round"><path d="M6 7h12l-1 14H7L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+          <div class="txt"><small>Quantité</small><b>500 sacs</b></div>
+          <span class="pill info">Modifier</span>
+        </div>
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+          <div class="txt"><small>Tu paies</small><b>À la livraison</b><span class="pill positive" style="display:inline-flex;margin-top:6px;color:var(--wk-fg-positive)">17 500 FCFA de moins</span></div>
+          <div style="text-align:right"><div class="amount">42 500 FCFA</div><div class="amount old">60 000 FCFA</div></div>
+        </div>
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div>
+          <div class="txt"><small>Livraison</small><b>Au GIE de Koungheul</b><span>Vers le 28 oct.</span></div>
+        </div>
+      </div>
+      <p class="source">Prix donné par Emballages du Saloum · 2 oct.</p>
+    </section>
+
+    <!-- Cartes/Avatar — group -->
+    <section>
+      <h3 class="section-title">Qui commande avec toi</h3>
+      <div class="card people">
+        <div class="faces">
+          <span class="avatar">AW</span><span class="avatar">FS</span><span class="avatar">MN</span><span class="avatar more">+9</span>
+        </div>
+        <p><b>12 transformatrices</b>Kaffrine, Koungheul et Birkelane</p>
+      </div>
+    </section>
+
+    <!-- Démarches/Étape timeline -->
+    <section>
+      <h3 class="section-title">Comment ça marche</h3>
+      <div class="card steps">
+        <div class="step">
+          <div class="rail"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="line"></span></div>
+          <div class="body"><b>Chacune dit sa quantité</b><span>Jusqu’au 20 oct.</span></div>
+        </div>
+        <div class="step">
+          <div class="rail"><span class="dot now"><i></i></span><span class="line later"></span></div>
+          <div class="body"><b>Le GIE passe une seule commande</b><span>Dès que les 5 000 sacs sont réunis.</span></div>
+        </div>
+        <div class="step">
+          <div class="rail"><span class="dot later"></span></div>
+          <div class="body muted" style="padding-bottom:0"><b>Tu récupères et tu paies ta part</b><span>Au GIE de Koungheul, en espèces ou par mobile money.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cartes/Encadré · Neutre + Relais humain -->
+    <div class="callout neutral">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>Si les 5 000 sacs ne sont pas réunis le 20 oct., la commande est annulée. <b>Tu ne paies rien.</b></span>
+    </div>
+    <div class="btn outline">Poser une question au GIE</div>
+  </div>
+</main>
+</body>
+</html>

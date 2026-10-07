@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- 1.12-X03 · Mon groupe d'épargne (fictif) — FICTIONAL page about trust between peers (1.12): a tontine kept by
+     the person herself. Not on page 22. The one dark card carries the next turn with an orange amount; statuses are
+     icon + word; nobody's debt is shown as a rank. All names and amounts are placeholders. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Mon groupe d’épargne</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .dark .head { display: flex; justify-content: space-between; align-items: center; }
+  .dark .big { font: 700 34px/38px var(--wk-font); color: var(--wk-fg-accent); white-space: nowrap; }
+  .dark .big small { font: 600 14px/20px var(--wk-font); color: var(--wk-fg-inverse-muted); margin-left: 6px; }
+  .dark .actions { display: flex; gap: var(--wk-space-10); align-items: center; }
+  .turns { display: flex; flex-direction: column; }
+  .turn { display: flex; align-items: center; gap: var(--wk-space-10); padding: 12px 0; border-bottom: 1px solid var(--wk-border-subtle); }
+  .turn:last-child { border-bottom: 0; }
+  .turn .n { width: 24px; font: 700 14px/20px var(--wk-font); color: var(--wk-fg-muted); text-align: center; flex: none; }
+  .turn .who { flex: 1; min-width: 0; }
+  .turn .who b { display: block; font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .turn .who span { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .turn.me { margin: 0 -8px; padding: 12px 8px; border-radius: var(--wk-radius-sm); background: var(--wk-status-info-bg); border-bottom: 0; }
+  .btnrow { display: flex; gap: var(--wk-space-10); }
+  .source { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-muted); margin-top: var(--wk-space-10); }
+</style>
+</head>
+<body>
+<main class="screen" aria-label="Mon groupe d’épargne">
+  <div class="statusbar"><span>9:41</span><span class="sys">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+  </span></div>
+
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="title"><small>Entre pairs</small><b>Mon groupe d’épargne</b></div>
+    <div class="round" aria-label="Plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="#445972"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></div>
+  </header>
+
+  <div class="content">
+    <section class="dark">
+      <div class="head"><span class="pill on-dark">Tour de Aïssatou</span><span class="pill on-dark">Le 15 nov.</span></div>
+      <div>
+        <div class="big">150 000<small>FCFA à recevoir</small></div>
+        <p style="margin-top:6px">Groupe « Les Cauris de Koungheul » · 10 femmes, 15&nbsp;000&nbsp;FCFA chacune par mois.</p>
+      </div>
+      <div class="actions">
+        <div class="btn white grow">Noter ma cotisation</div>
+        <div class="listen" aria-label="Écouter"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">Ce mois-ci</h3>
+      <p class="section-sub">Octobre · tu as dit avoir cotisé, Fatou Sarr garde le cahier.</p>
+      <div class="card tight">
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+          <div class="txt"><small>Ta cotisation</small><b>15 000 FCFA</b><span>Dite par toi, le 4 oct.</span></div>
+          <span class="pill positive">Dit par toi</span>
+        </div>
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
+          <div class="txt"><small>Les autres</small><b>8 sur 10 ont cotisé</b><span>Reste à attendre 2 cotisations</span></div>
+          <span class="pill attention">Encore 2</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">L’ordre des tours</h3>
+      <div class="card">
+        <div class="turns">
+          <div class="turn"><span class="n">1</span><span class="avatar sm">KD</span><div class="who"><b>Khady Diop</b><span>A reçu en août</span></div><span class="pill neutral">Reçu</span></div>
+          <div class="turn"><span class="n">2</span><span class="avatar sm">FS</span><div class="who"><b>Fatou Sarr</b><span>A reçu en sept.</span></div><span class="pill neutral">Reçu</span></div>
+          <div class="turn me"><span class="n">3</span><span class="avatar sm">AD</span><div class="who"><b>Toi</b><span>Tour du 15 nov.</span></div><span class="pill info">Bientôt</span></div>
+          <div class="turn"><span class="n">4</span><span class="avatar sm">MN</span><div class="who"><b>Mariama Ndiaye</b><span>Tour de déc.</span></div><span class="pill neutral">À venir</span></div>
+        </div>
+      </div>
+      <p class="source">Cahier tenu par Fatou Sarr · mis à jour le 6 oct.</p>
+    </section>
+
+    <div class="callout neutral">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>Wekomkom ne garde pas l’argent du groupe. <b>Il t’aide à te souvenir des tours</b> et peut garder ces cotisations dans ton historique, si tu le souhaites.</span>
+    </div>
+    <div class="btnrow"><div class="btn outline grow">Rappeler le tour</div><div class="btn outline grow">Inviter</div></div>
+  </div>
+</main>
+</body>
+</html>

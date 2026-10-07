@@ -1,0 +1,45 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Idea Lab — spotlight startup (pro)</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:#f3f1ee;--ink:#14212e;--navy:#0c1b2a;--green:#2fa84f;--yellow:#f5a623;--red:#e8503a;--teal:#1e8e6e;--char:#1c1c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d6;font-family:"Poppins","Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px 60px;gap:12px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.slide{position:relative;overflow:hidden;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{opacity:.22;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.5) 1px,transparent 1.2px);background-size:5px 5px}
+.tri{position:absolute;width:0;height:0;border-style:solid;border-color:transparent}
+img{display:block}
+
+.slide{width:1080px;height:1080px;zoom:0.62}
+
+.sl{background:radial-gradient(760px 700px at 85% 25%,rgba(30,142,110,.38),transparent 62%),radial-gradient(600px 500px at 0% 100%,rgba(245,166,35,.16),transparent 60%),linear-gradient(170deg,#262b2f,#161819)}
+.hero{background:url(../assets/photos/photo-riziere-senegal.jpg) 40% 60%/cover;opacity:.30;mix-blend-mode:luminosity;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000 70%,transparent);mask-image:linear-gradient(90deg,transparent,#000 40%,#000 70%,transparent)}
+.wm{position:absolute;left:-60px;bottom:120px;width:640px;opacity:.05;filter:brightness(3);transform:rotate(-6deg)}
+.top{position:absolute;top:0;left:50%;transform:translateX(-50%);width:620px;height:104px;border:1.5px solid rgba(255,255,255,.3);border-top:0;border-radius:0 0 30px 30px;background:rgba(14,16,18,.78);backdrop-filter:blur(8px);display:flex;align-items:center;gap:22px;padding:0 28px;z-index:6}
+.top small{font:500 20px "Poppins";color:#fff;white-space:nowrap}.top img{height:72px}
+.cl{position:absolute;left:56px;top:182px;height:52px;z-index:5}
+.pp{position:absolute;right:0;top:70px;width:520px;height:850px;z-index:2;overflow:hidden}
+.pp img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.pp::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,#1b1e20 0%,rgba(27,30,32,.0) 42%),linear-gradient(0deg,#161819 0%,rgba(22,24,25,0) 28%)}
+.pp::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,142,110,.28),transparent 55%);mix-blend-mode:screen}
+.glass{position:absolute;left:44px;top:262px;width:640px;border:1.6px solid rgba(255,255,255,.34);border-radius:38px;padding:56px 48px;z-index:4;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));backdrop-filter:blur(10px);box-shadow:0 26px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.25)}
+.glass h2{font:800 90px/1 "Poppins";letter-spacing:-3px;color:#fff}
+.glass h2 span{background:linear-gradient(90deg,#7de3b8,#f5d36a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass p{font:400 29px/1.5 "Poppins";color:#e3e3e0;margin-top:26px}
+.cred{position:absolute;right:46px;bottom:236px;background:#fff;color:#111;border-radius:30px;padding:26px 46px;text-align:center;z-index:5;box-shadow:0 20px 44px rgba(0,0,0,.45)}
+.cred b{font:700 36px "Poppins";display:block}.cred span{font:800 42px "Space Grotesk";letter-spacing:1px;color:var(--teal)}
+.mq{position:absolute;right:20px;top:120px;z-index:6;font:600 14px "Poppins";letter-spacing:2px;color:#fff;background:rgba(232,80,58,.9);padding:6px 14px;border-radius:20px}
+.wb{position:absolute;left:0;right:0;bottom:0;height:158px;background:#fff;border-radius:50px 50px 0 0;display:grid;place-items:center;z-index:7;box-shadow:0 -14px 40px rgba(0,0,0,.3)}
+.wb img{height:118px;clip-path:inset(6px 8px 6px 8px)}
+</style></head><body>
+<p class="note">Idea Lab — spotlight startup (pro) · exemple fictif · photos et logos réels (voir assets/photos/credits.json, assets/people/credits.json)</p>
+<div class="slide sl" data-od-id="startup-spotlight">
+<div class="layer hero"></div><img class="wm" src="../assets/logo-idealab.png" alt="" aria-hidden="true" />
+<div class="top"><small>Mis en œuvre par</small><img src="../assets/funders-expertise-giz.png" alt="Expertise France · GIZ" /></div>
+<img class="cl" src="../assets/logo-concree-dark.png" alt="CONCREE" />
+<div class="pp" data-od-id="spotlight-photo"><img src="../assets/people/fondateur.jpg" alt="Photo illustrative (maquette)" /></div><div class="mq">MAQUETTE · PHOTO ILLUSTRATIVE</div>
+<div class="glass" data-od-id="spotlight-pitch"><h2>Agri<span>Sense</span></h2><p>Des capteurs solaires à bas coût et une application mobile qui aident les petits producteurs à décider quand irriguer, pour économiser l'eau et augmenter les rendements.</p></div>
+<div class="cred" data-od-id="spotlight-credit"><b>Ibrahima SY</b><span>◈ AGRISENSE</span></div>
+<div class="wb"><img src="../assets/partners-spotlight-strip.png" alt="Partenaires institutionnels" /></div>
+<div class="layer grain" style="mix-blend-mode:overlay;opacity:.16"></div></div>
+</body></html>

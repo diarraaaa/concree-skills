@@ -1,0 +1,6 @@
+__pycache__/
+*.log
+*.db
+_chrome-profile/
+.shots/profile/
+node_modules/

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exemple — CONCREE poster skill (Pattern 5 : lancement de cohorte)</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f5f5;
+    --fg: #000000;
+    --muted: #8c8c8c;
+    --border: #dbdbdb;
+    --accent: #ff9900;
+    --accent-secondary: #0a58a5;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--surface);
+    font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--fg);
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 16px 64px;
+  }
+  .meta-bar {
+    width: 100%;
+    max-width: 1080px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .meta-bar strong { color: var(--fg); font-weight: 700; }
+  .meta-bar code {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: var(--fg);
+  }
+  .meta-bar a { color: var(--accent-secondary); }
+
+  .poster {
+    width: 1080px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+    background: #0c1f1d;
+  }
+  .poster__photo {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 66%;
+  }
+  .poster__photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .poster__wash {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, #0c1f1d 0%, #0c1f1d 34%, rgba(12,31,29,0.75) 46%, rgba(12,31,29,0.15) 66%, transparent 78%);
+  }
+
+  .logo-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    padding: 8px 18px;
+  }
+  .logo-card img { height: 22px; display: block; }
+
+  .poster__wordmark {
+    position: absolute;
+    top: 66px;
+    left: 40px;
+    font-weight: 800;
+    font-size: 26px;
+    color: #fff;
+  }
+  .poster__wordmark .hi { color: var(--accent); }
+
+  .poster__cohort-tag {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--accent);
+  }
+
+  .poster__body {
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    width: 46%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .poster__body b { font-weight: 700; }
+  .poster__arrow {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .poster__headline {
+    position: absolute;
+    top: 330px;
+    left: 40px;
+    width: 50%;
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  .partner-card {
+    position: absolute;
+    top: 300px;
+    right: 40px;
+    width: 34%;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .partner-card .label { font-size: 9px; color: var(--muted); font-style: italic; }
+  .partner-card .name { font-weight: 800; font-size: 16px; color: var(--fg); margin-top: 4px; }
+
+  .poster__highlight {
+    position: absolute;
+    bottom: 96px;
+    right: 40px;
+    width: 44%;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .poster__highlight .icon {
+    width: 18px; height: 18px; flex: none;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+
+  .poster__footer {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: #fff;
+    padding: 14px 40px 18px;
+    text-align: center;
+  }
+  .poster__footer .note { font-size: 10px; color: var(--muted); font-style: italic; }
+
+  @media (max-width: 640px) {
+    .poster__headline { font-size: 22px; }
+    .poster__body { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="meta-bar">
+    <span>Exemple 5/5 — <strong>Pattern 5 : lancement de cohorte</strong> (voir <code>../SKILL.md</code> et <code>../references/idea-lab-cohort-launch.md</code>).</span>
+    <span>Réel : logo CONCREE, photo (scène de brainstorming réelle du site CONCREE, utilisée comme ambiance thématique — pas comme portrait d'une personne nommée). Entre accolades : à remplacer par les vraies informations de la cohorte. — <a href="index.html">Retour à l'index</a></span>
+  </div>
+
+  <div class="poster" data-od-id="poster-canvas" data-screen-label="Exemple — lancement de cohorte">
+    <div class="poster__photo" data-od-id="poster-photo">
+      <img src="../assets/example-photo-innovation.png" alt="Séance de brainstorming avec notes autocollantes colorées, photographie réelle du site CONCREE" />
+    </div>
+    <div class="poster__wash" aria-hidden="true"></div>
+
+    <span class="logo-card"><img src="../assets/concree-logo.svg" alt="Logo CONCREE" /></span>
+
+    <div class="poster__wordmark" data-od-id="poster-program-wordmark">{{Programme<span class="hi">Lab</span>}}</div>
+    <div class="poster__cohort-tag" data-od-id="poster-cohort-tag">{{Cohorte N}}</div>
+
+    <p class="poster__body" data-od-id="poster-body">
+      <b>{{Structure porteuse}}</b> en partenariat avec <b>{{Partenaire externe}}</b>,
+      {{courte description du partenaire}}, lance la cohorte {{N}} du programme
+      dont le thème est :
+      <span class="poster__arrow" aria-hidden="true">↘</span>
+    </p>
+
+    <p class="poster__headline" data-od-id="poster-headline">
+      {{Phrase-mission de la cohorte en une à deux lignes}}
+    </p>
+
+    <div class="partner-card" data-od-id="poster-partner-card">
+      <span class="label">Partenaire</span>
+      <span class="name">{{Nom du partenaire}}</span>
+    </div>
+
+    <div class="poster__highlight" data-od-id="poster-highlight">
+      <span class="icon" aria-hidden="true"></span>
+      <span>{{Bénéfice concret réel — ex. opportunité de subvention d'amorçage pour les lauréats}}</span>
+    </div>
+
+    <div class="poster__footer" data-od-id="poster-footer">
+      <div class="note">+ logos institutionnels réels</div>
+    </div>
+  </div>
+
+</body>
+</html>

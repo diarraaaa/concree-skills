@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YEAH — Atelier présentiel (maquette)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#07342a; --ink2:#0e5340; --gold:#f5a623; --gold2:#c9821a; --orange:#ff8a1f; --cream:#f8f3e6; --sand:#eee2c8; --red:#d8432c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  img { display:block; }
+  body { background:#cfd3d0; font-family:"Open Sans",system-ui,Segoe UI,Arial,sans-serif; display:flex; flex-direction:column; align-items:center; gap:14px; padding:28px 12px 60px; }
+  .note { font-size:12px; color:#555; max-width:1080px; width:100%; }
+
+  .poster { width:1080px; height:1350px; position:relative; overflow:hidden; flex:none; color:var(--ink); box-shadow:0 24px 60px rgba(0,0,0,.35); zoom:.7;
+            background:
+              radial-gradient(760px 620px at 8% 6%, rgba(255,255,255,.92), transparent 62%),
+              radial-gradient(820px 660px at 96% 92%, rgba(255,214,140,.42), transparent 62%),
+              radial-gradient(700px 700px at 82% 26%, rgba(38,164,118,.22), transparent 64%),
+              linear-gradient(158deg, #fbf7ec 0%, var(--cream) 42%, var(--sand) 100%); }
+  .layer { position:absolute; inset:0; pointer-events:none; }
+  .nut { background:url(../../assets/photos/photo-noix-cajou.jpg) 68% 40%/cover; opacity:.26; mix-blend-mode:multiply;
+         -webkit-mask-image:radial-gradient(ellipse 62% 52% at 86% 74%, #000 12%, transparent 72%);
+                 mask-image:radial-gradient(ellipse 62% 52% at 86% 74%, #000 12%, transparent 72%); }
+  .leaves { opacity:.11; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'><g fill='none' stroke='%2307342a' stroke-width='3' stroke-linecap='round'><path d='M26 140 C26 96 48 62 82 56 C82 100 60 134 26 140Z'/><path d='M26 140 L70 74'/><path d='M118 66 C118 32 135 14 157 12 C157 44 142 62 118 66Z'/><path d='M118 66 L148 26'/></g></svg>'); background-size:170px 170px; }
+  .wm { position:absolute; left:-150px; bottom:-120px; width:820px; opacity:.07; transform:rotate(-8deg); }
+  .grain { opacity:.20; mix-blend-mode:overlay; background-image:radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.2px); background-size:5px 5px; }
+
+  /* header */
+  .cjs { position:absolute; left:52px; top:44px; height:58px; }
+  .mcf { position:absolute; right:52px; top:34px; height:88px; }
+  .yeah { position:absolute; left:50%; top:206px; transform:translateX(-50%); height:104px; filter:drop-shadow(0 10px 22px rgba(7,52,42,.22)); }
+  .mq { position:absolute; left:52px; top:118px; z-index:9; font:700 14px "Open Sans",sans-serif; letter-spacing:2px; color:#fff;
+        background:var(--red); padding:7px 14px; border-radius:20px; box-shadow:0 8px 20px rgba(216,67,44,.35); }
+  .badge { position:absolute; left:50%; top:334px; transform:translateX(-50%); display:flex; align-items:center; gap:12px; padding:12px 32px; border-radius:60px;
+           background:linear-gradient(135deg,var(--orange),#ffbb4d); color:#3a1e00; font:700 26px "Fredoka",sans-serif; letter-spacing:2px; white-space:nowrap;
+           box-shadow:0 16px 32px rgba(255,138,31,.35), inset 0 1px 0 rgba(255,255,255,.5); }
+  .badge i { width:16px; height:16px; border-radius:4px; background:#3a1e00; opacity:.75; display:block; }
+
+  /* titre */
+  .theme-l { position:absolute; left:58px; top:472px; font:600 22px "Fredoka",sans-serif; letter-spacing:4px; text-transform:uppercase; color:var(--gold2); display:flex; align-items:center; gap:14px; }
+  .theme-l::after { content:""; width:84px; height:2px; background:linear-gradient(90deg,var(--gold2),transparent); }
+  h1 { position:absolute; left:52px; top:504px; width:600px; font:700 92px/0.95 "Fredoka",sans-serif; letter-spacing:-2px; color:var(--ink);
+       filter:drop-shadow(0 10px 20px rgba(7,52,42,.18)); }
+  h1 em { font-style:normal; background:linear-gradient(180deg,#f7bc46 0%, var(--gold) 55%, var(--orange) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { position:absolute; left:58px; top:700px; width:570px; font:600 28px/1.3 "Fredoka",sans-serif; color:var(--ink2); }
+  .kpis { position:absolute; left:58px; top:794px; display:flex; gap:10px; flex-wrap:wrap; width:600px; }
+  .kpis span { font:700 14.5px "Open Sans",sans-serif; letter-spacing:.6px; color:var(--ink2); background:rgba(7,52,42,.07); border:1.5px solid rgba(7,52,42,.16); border-radius:30px; padding:9px 16px; }
+
+  /* photo dominante + badge date */
+  .shot { position:absolute; left:684px; top:470px; width:352px; height:660px; border-radius:40px; overflow:hidden;
+          border:9px solid #fff; box-shadow:0 34px 60px rgba(7,52,42,.30), 0 0 0 1.5px rgba(7,52,42,.10); transform:rotate(1.2deg); z-index:2; }
+  .shot img { width:100%; height:100%; object-fit:cover; object-position:52% 44%; }
+  .shot::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 58%,rgba(3,32,25,.42)); }
+  .shot .cap { position:absolute; left:18px; right:18px; bottom:16px; z-index:3; color:#fff; font:700 14px "Open Sans",sans-serif; letter-spacing:1.6px; text-shadow:0 2px 8px rgba(0,0,0,.5); }
+  .date { position:absolute; right:34px; top:398px; width:168px; height:168px; border-radius:50%; z-index:6; transform:rotate(-7deg);
+          background:linear-gradient(140deg,#ffb347,var(--orange) 55%,#f08a1c); color:#3a1e00; display:grid; place-items:center; text-align:center;
+          box-shadow:0 22px 40px rgba(240,138,28,.42), 0 0 0 9px rgba(255,255,255,.85); }
+  .date span { display:block; font:700 17px "Fredoka",sans-serif; letter-spacing:3px; }
+  .date b { display:block; font:700 68px/0.86 "Fredoka",sans-serif; letter-spacing:-2px; }
+  .date small { display:block; font:700 14px "Open Sans",sans-serif; letter-spacing:1.4px; margin-top:3px; }
+
+  /* rail de verre superposé à la photo */
+  .rail { position:absolute; left:56px; right:44px; top:848px; height:288px; z-index:5; border-radius:38px;
+          display:grid; grid-template-columns:1fr 122px 330px 250px; align-items:center; gap:26px; padding:0 34px;
+          background:linear-gradient(160deg, rgba(255,255,255,.80), rgba(255,255,255,.48)); backdrop-filter:blur(18px) saturate(1.25);
+          border:1.5px solid rgba(255,255,255,.92); box-shadow:0 30px 60px rgba(7,52,42,.24), inset 0 1px 0 rgba(255,255,255,.95); }
+  .blk { display:flex; gap:18px; align-items:flex-start; }
+  .blk + .blk { border-left:1.5px solid rgba(7,52,42,.11); padding-left:26px; }
+  .ic { width:64px; height:64px; flex:none; border-radius:20px; display:grid; place-items:center;
+        background:linear-gradient(145deg, rgba(245,166,35,.28), rgba(245,166,35,.08)); border:1.5px solid rgba(201,130,26,.45); }
+  .ic svg { width:34px; height:34px; stroke:var(--gold2); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .blk .lb { display:block; font:700 13px "Open Sans",sans-serif; letter-spacing:2.4px; color:var(--gold2); }
+  .blk .vl { display:block; font:700 27px/1.12 "Fredoka",sans-serif; color:var(--ink); margin-top:3px; }
+  .blk .vs { display:block; font:600 15px/1.3 "Open Sans",sans-serif; color:rgba(7,52,42,.72); margin-top:4px; }
+  .plc { text-align:center; }
+  .plc b { display:block; font:700 82px/0.9 "Fredoka",sans-serif; color:var(--ink); letter-spacing:-2px; }
+  .plc span { display:block; font:700 15px/1.25 "Open Sans",sans-serif; letter-spacing:2px; color:var(--gold2); margin-top:4px; }
+  .plc small { display:block; font:600 12.5px/1.25 "Open Sans",sans-serif; color:rgba(7,52,42,.66); margin-top:6px; }
+  .cta { align-self:center; }
+  .btn { display:block; text-align:center; background:linear-gradient(135deg,var(--orange),#ffbb4d); color:#3a1e00; font:700 26px "Fredoka",sans-serif;
+         padding:20px 22px; border-radius:50px; box-shadow:0 16px 30px rgba(240,138,28,.38), inset 0 1px 0 rgba(255,255,255,.6); }
+  .cta small { display:block; text-align:center; font:600 14.5px/1.3 "Open Sans",sans-serif; color:rgba(7,52,42,.72); margin-top:10px; }
+
+  /* bandeau de partenaires */
+  .bar { position:absolute; left:0; right:0; bottom:0; height:148px; background:#fff; border-radius:56px 56px 0 0; display:grid; place-items:center; box-shadow:0 -16px 44px rgba(7,52,42,.22); }
+  .bar img { height:108px; clip-path:inset(8px 10px 8px 10px); }
+</style>
+</head>
+<body>
+<p class="note">YEAH — Atelier présentiel · MAQUETTE · exemple fictif · contenus à remplacer (thème, date, lieu, noms et chiffres inventés ; photos illustratives sous licence libre, voir <code>assets/photos/credits.json</code>).</p>
+
+<div class="poster" data-od-id="poster-canvas">
+  <div class="layer nut" data-od-id="hero-photo-watermark"></div>
+  <div class="layer leaves"></div>
+  <img class="wm" src="../../assets/logo-yeah.png" alt="" aria-hidden="true" />
+
+  <img class="cjs" src="../../assets/logo-cjs.png" alt="Consortium Jeunesse Sénégal" />
+  <img class="mcf" src="../../assets/logo-mastercard-foundation.png" alt="Mastercard Foundation" />
+  <div class="mq" data-od-id="maquette-tag">MAQUETTE · PHOTOS ILLUSTRATIVES</div>
+  <img class="yeah" src="../../assets/logo-yeah.png" alt="YEAH — Yaakaar Jeunesse &amp; Entrepreneuriat" />
+  <div class="badge" data-od-id="format-badge"><i></i>ATELIER PRÉSENTIEL</div>
+
+  <div class="theme-l">Atelier pratique</div>
+  <h1 data-od-id="headline">Briser, calibrer,<br><em>emballer.</em></h1>
+  <p class="sub" data-od-id="subtitle">Trois gestes pour transformer la noix brute en amande prête à l'export.</p>
+  <div class="kpis" data-od-id="kpi-strip">
+    <span>Décorticage</span><span>Calibrage</span><span>Emballage</span><span>Prix de vente</span>
+    <span>Fiche qualité</span>
+  </div>
+
+  <div class="shot" data-od-id="hero-image">
+    <img src="../../assets/photos/photo-anacarde-rouge.jpg" alt="Photo illustrative (maquette) — anacarde sur l'arbre" />
+    <div class="cap">MAQUETTE · PHOTO ILLUSTRATIVE</div>
+  </div>
+  <div class="date" data-od-id="date-badge"><div><span>VENDredi</span><b>08</b><small>MAI 2026</small></div></div>
+
+  <div class="rail" data-od-id="info-rail">
+    <div class="blk">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+      <div><span class="lb">HORAIRE</span><span class="vl">09H00 — 13H00</span><span class="vs">Accueil dès 08h30</span></div>
+    </div>
+    <div class="blk plc"><div><b>24</b><span>PARTICIPANTS<br>MAXIMUM</span><small>Places fictives</small></div></div>
+    <div class="blk">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 0 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+      <div><span class="lb">LIEU</span><span class="vl">Hub CONCREE, Dakar</span><span class="vs">Salle de transformation · plateau technique</span></div>
+    </div>
+    <div class="cta" data-od-id="cta"><div class="btn">Réserver ma place</div><small>Gratuit · inscription obligatoire</small></div>
+  </div>
+
+  <div class="bar" data-od-id="partners"><img src="../../assets/partners-yeah-strip.png" alt="Projet mis en œuvre par : CONCREE, ACCEENT, Yeesal AgriHub, Impact Hub, Declic, Volkeno" /></div>
+  <div class="layer grain"></div>
+</div>
+</body>
+</html>

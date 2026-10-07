@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JAMBAARS AI — Demo Day (exemple pro, fictif)</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#0a8f3f;--orange:#f9a11b;--red:#e5334f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d6d6d3;font-family:"Plus Jakarta Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 12px 60px}
+  .note{font-size:12px;color:#555;max-width:1080px;width:100%}
+  .poster{width:1080px;height:1080px;position:relative;overflow:hidden;flex:none;color:#2b2b2b;zoom:.8;box-shadow:0 24px 60px rgba(0,0,0,.25);
+    background:radial-gradient(700px 500px at 0% 0%,rgba(10,143,63,.10),transparent 60%),radial-gradient(700px 600px at 100% 100%,rgba(249,161,27,.18),transparent 60%),#fbfaf8}
+  .layer{position:absolute;inset:0;pointer-events:none}
+  .checker{opacity:.5;background-image:conic-gradient(#f1efec 25%,transparent 0 50%,#f1efec 0 75%,transparent 0);background-size:120px 120px}
+  .arc{position:absolute;border:1.5px solid rgba(10,143,63,.16);border-radius:50%}
+  .wm{position:absolute;right:-90px;top:160px;width:560px;opacity:.06}
+  .logo{position:absolute;left:46px;top:46px;height:68px}
+  .senhub{position:absolute;right:50px;top:30px;height:128px}
+  .spark{position:absolute;width:44px;height:44px}
+  .hl1{position:absolute;left:46px;top:190px;font:800 78px/1 "Plus Jakarta Sans";color:#3f9f5a;letter-spacing:-2px}
+  .hl2{position:absolute;left:46px;top:274px;font:800 78px/1 "Plus Jakarta Sans";letter-spacing:-2px;background:linear-gradient(90deg,#f9a11b,#e5334f);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .txt{position:absolute;left:46px;top:392px;width:560px;font:500 25px/1.55 "Plus Jakarta Sans";color:#4a4a4a}
+  .tags{position:absolute;left:46px;top:640px;font:800 27px "Plus Jakarta Sans";color:var(--green)}
+  .photo{position:absolute;right:0;top:305px;width:430px;height:495px;border-radius:26px 0 0 0;overflow:hidden;
+    clip-path:path("M26 0 H430 V495 H120 C 20 495 0 390 0 300 V26 Q0 0 26 0Z");box-shadow:0 20px 40px rgba(0,0,0,.2)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(249,161,27,.0),rgba(229,51,79,.18))}
+  .spk{position:absolute;left:46px;top:716px;display:flex;gap:16px}
+  .sp{display:flex;align-items:center;gap:12px;background:#fff;border-radius:18px;padding:9px 18px 9px 9px;box-shadow:0 10px 24px rgba(0,0,0,.10);border:1px solid #eee}
+  .sp .av{width:62px;height:62px;border-radius:50%;overflow:hidden;border:3px solid var(--orange);flex:none}
+  .sp b{font:800 17px/1.1 "Plus Jakarta Sans";display:block} .sp span{font:500 12.500px/1.25 "Plus Jakarta Sans";display:block;color:#666;margin-top:3px;width:112px}
+  .band{position:absolute;left:0;top:810px;width:760px;height:132px;border-radius:0 90px 0 0;background:linear-gradient(100deg,#ffb12a,#f2762e 55%,#e5334f);box-shadow:0 18px 40px rgba(229,51,79,.3);color:#fff;padding:22px 40px;display:flex;flex-direction:column;justify-content:center;gap:12px;font:700 29px "Plus Jakarta Sans"}
+  .band div{display:flex;align-items:center;gap:16px}
+  .band svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .corner{position:absolute;right:-110px;bottom:-110px;width:440px;height:440px;border-radius:50%;background:linear-gradient(135deg,#ffb12a,#e5334f)}
+  .stay{position:absolute;right:44px;bottom:38px;font:800 25px/1.2 "Plus Jakarta Sans";color:#fff;text-align:right}
+  .strip{position:absolute;left:44px;bottom:24px;height:92px}
+  .mq{position:absolute;right:50px;top:166px;font:800 13px "Plus Jakarta Sans";letter-spacing:2px;color:#fff;background:#e5334f;padding:7px 14px;border-radius:20px;z-index:9}
+  .grain{opacity:.12;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.45) 1px,transparent 1.2px);background-size:5px 5px}
+</style></head><body>
+<p class="note">JAMBAARS AI — Demo Day · exemple « pro » (contenu fictif, version claire). Photo réelle d'un atelier à Dakar (Wikimedia Commons, voir <code>assets/photos/credits.json</code>), logos réels recadrés, intervenants illustrés.</p>
+<div class="poster" data-od-id="poster-canvas">
+  <div class="layer checker"></div>
+  <div class="arc" style="left:-260px;top:-300px;width:640px;height:640px"></div><div class="arc" style="left:-120px;top:110px;width:560px;height:560px"></div>
+  <img class="wm" src="../assets/logo-senhub.png" alt="" aria-hidden="true" />
+  <img class="logo" src="../assets/logo-jambaars.png" alt="JAMBAARS AI Sénégal" />
+  <div class="mq">MAQUETTE · PHOTOS ILLUSTRATIVES</div>
+  <img class="senhub" src="../assets/logo-senhub.png" alt="SEN HUB" />
+  <svg class="spark" style="left:520px;top:70px" viewBox="0 0 40 40"><path d="M20 0C22 13 27 18 40 20 27 22 22 27 20 40 18 27 13 22 0 20 13 18 18 13 20 0Z" fill="#0a8f3f"/></svg>
+  <svg class="spark" style="left:470px;top:560px" viewBox="0 0 40 40"><path d="M20 0C22 13 27 18 40 20 27 22 22 27 20 40 18 27 13 22 0 20 13 18 18 13 20 0Z" fill="#f9a11b"/></svg>
+
+  <div class="hl1" data-od-id="headline-1">DEMO DAY FINALE</div><div class="hl2" data-od-id="headline-2">JAMBAARS AI</div>
+  <p class="txt" data-od-id="body">La deuxième cohorte termine son parcours d'accélération : les dix startups IA sélectionnées présentent leurs produits devant un panel d'investisseurs et de partenaires technologiques.</p>
+  <div class="tags">Pitchs ~ Networking ~ After Work</div>
+
+  <div class="photo" data-od-id="photo"><img src="../assets/photos/photo-atelier-dakar.jpg" alt="Atelier de formation à Dakar (photo réelle, Wikimedia Commons)" /></div>
+  <div class="spk" data-od-id="speakers">
+    <div class="sp"><div class="av"><img src="../assets/people/intervenante-1.jpg" alt="Photo illustrative (maquette)" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block" /></div><div><b>Bintou Ba</b><span>Directrice, Orange Digital Center</span></div></div>
+    <div class="sp"><div class="av"><img src="../assets/people/intervenant-2.jpg" alt="Photo illustrative (maquette)" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block" /></div><div><b>Seydou Ka</b><span>Chargé de partenariat, MCTN</span></div></div>
+    <div class="sp"><div class="av"><img src="../assets/people/intervenante-3.jpg" alt="Photo illustrative (maquette)" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block" /></div><div><b>Yacine Fall</b><span>Responsable programme JAMBAARS AI</span></div></div>
+  </div>
+  <div class="band" data-od-id="date-venue"><div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Vendredi 20 Novembre 2026 · 10h00</div><div><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></svg>CONCREE Hub, Dakar</div></div>
+  <div class="corner"></div><div class="stay">Restez connectés<br>aux temps forts</div>
+  <img class="strip" data-od-id="partners" src="../assets/partners-jambaars-strip.png" alt="MCTN, Ambassade de France, OJ Hub, CONCREE, Orange Digital Center Sonatel" />
+  <div class="layer grain"></div>
+</div></body></html>

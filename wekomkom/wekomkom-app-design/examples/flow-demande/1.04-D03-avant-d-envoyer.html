@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- 1.04-D03 · Avant d’envoyer — the person chooses what the mutuelle will see.
+     Patterns: En-tête Retour, Cartes/Encadré Info, Cartes/Ligne d’information,
+     Démarches/Avant de partager with Cartes/Ligne de partage (Interrupteur · Partage, Verrouillé),
+     Statuts/Niveau de preuve, bottom Actions/Bouton Principal + écouter. No dark card. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Avant d’envoyer</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .summary .top { display: flex; gap: var(--wk-space-10); align-items: center; margin-bottom: var(--wk-space-10); }
+  .org-logo { width: 40px; height: 40px; border-radius: var(--wk-radius-sm); background: var(--wk-bg-brand-subtle); color: var(--wk-blue-500);
+              display: flex; align-items: center; justify-content: center; font: 700 13px/1 var(--wk-font); flex: none; }
+  .summary h2 { font: 700 16px/22px var(--wk-font); color: var(--wk-fg-title); }
+  .summary .org { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .summary .facts { display: flex; gap: var(--wk-space-20); padding-top: var(--wk-space-10); border-top: 1px solid var(--wk-border-subtle); }
+  .summary .facts small { display: block; font: 600 12px/16px var(--wk-font); color: var(--wk-fg-muted); }
+  .summary .facts b { font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .share .txt .meta { display: flex; gap: 6px; align-items: center; margin-top: 6px; }
+  .share .row.off .txt b { color: var(--wk-fg-muted); }
+</style>
+</head>
+<body>
+<main class="screen" aria-label="Avant d’envoyer">
+  <div class="statusbar">
+    <span>9:41</span>
+    <span class="sys">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#000610"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.3-1.3A10.2 10.2 0 0 0 8 .4C5.2.4 2.6 1.5.7 3.3L2 4.6a8.4 8.4 0 0 1 6-2.4Zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.3-1.3A6.6 6.6 0 0 0 8 4c-1.8 0-3.4.7-4.7 1.8l1.3 1.3c.9-.8 2.1-1.3 3.4-1.3Zm0 3.6c-.6 0-1.1.2-1.5.6L8 11.5l1.5-1.5c-.4-.4-.9-.6-1.5-.6Z"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+    </span>
+  </div>
+
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="title"><small>Ta demande</small><b>Avant d’envoyer</b></div>
+    <div class="spacer-40"></div>
+  </header>
+
+  <div class="content">
+    <!-- Cartes/Encadré · Info -->
+    <div class="callout info">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#015AA9" stroke-width="1.8"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="M12 10v5M12 7.5v.5" stroke-linecap="round"/></svg>
+      <span>La mutuelle verra <b>seulement ce que tu choisis ici</b>. Tu peux changer d’avis jusqu’à l’envoi.</span>
+    </div>
+
+    <!-- Demande summary -->
+    <section class="card summary">
+      <div class="top">
+        <span class="org-logo">MK</span>
+        <div><h2>Prêt équipement pour les transformatrices</h2><div class="org">Mutuelle d’épargne et de crédit de Koungheul</div></div>
+      </div>
+      <div class="facts">
+        <div><small>Tu demandes</small><b>2 500 000 FCFA</b></div>
+        <div><small>Pour</small><b>Une décortiqueuse</b></div>
+      </div>
+    </section>
+
+    <!-- Démarches/Avant de partager + Cartes/Ligne de partage -->
+    <section class="share">
+      <h3 class="section-title">Ce qui sera partagé</h3>
+      <p class="section-sub">4 choses sur 5. Tout est prêt.</p>
+      <div class="card tight">
+        <div class="row">
+          <span class="tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></span>
+          <div class="txt"><b>Ton activité et ta ville</b><span>Transformation du mil · Koungheul</span></div>
+          <span class="lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5E6F86" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Nécessaire</span>
+        </div>
+        <div class="row">
+          <span class="tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7V3Z"/><path d="M14 3v5h5"/></svg></span>
+          <div class="txt"><b>Ventes des 6 derniers mois</b><div class="meta"><span class="pill positive">Vérifié</span></div></div>
+          <span class="switch"><span class="knob"></span></span>
+        </div>
+        <div class="row">
+          <span class="tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M14 10h4M14 14h4M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/></svg></span>
+          <div class="txt"><b>NINEA</b><div class="meta"><span class="pill info">Reçu</span></div></div>
+          <span class="switch"><span class="knob"></span></span>
+        </div>
+        <div class="row">
+          <span class="tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16V10M12 16V6M17 16v-4"/></svg></span>
+          <div class="txt"><b>Prévisionnel simplifié</b><span>Préparé avec Adia aujourd’hui</span></div>
+          <span class="switch"><span class="knob"></span></span>
+        </div>
+        <div class="row off">
+          <span class="tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+          <div class="txt"><b>Ton numéro de téléphone</b><span>Masqué · la mutuelle te répond dans Wekomkom</span></div>
+          <span class="switch off"><span class="knob"></span></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="bottom">
+    <div class="actions">
+      <div class="btn primary grow">Envoyer à la mutuelle</div>
+      <div class="listen lg" aria-label="Écouter"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div>
+    </div>
+    <p class="note">La mutuelle décidera ensuite. Je te préviens dès qu’elle répond.</p>
+  </div>
+</main>
+</body>
+</html>

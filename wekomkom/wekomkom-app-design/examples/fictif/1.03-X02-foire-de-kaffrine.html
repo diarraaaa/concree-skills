@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- 1.03-X02 · Foire de Kaffrine (fictif) — FICTIONAL event page of Explorer (1.03). Not on page 22: check 1.03 events
+     before reusing. Rules applied: Zone géographique chip on top (9.03), event opens on a calendar, one dark card,
+     one primary button, source + date. Names, places and hours are placeholders. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Foire de Kaffrine</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .zone { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: var(--wk-radius-pill); background: var(--wk-bg-surface); border: 1px solid var(--wk-border-default); font: 700 13px/16px var(--wk-font); color: var(--wk-fg-action); align-self: flex-start; }
+  .dark .head { display: flex; justify-content: space-between; align-items: center; }
+  .dark .when { display: flex; gap: var(--wk-space-15); align-items: center; }
+  .dark .day { width: 64px; height: 72px; border-radius: var(--wk-radius-md); background: var(--wk-bg-surface-inverse-raised); border: 1px solid var(--wk-border-inverse); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .dark .day b { font: 700 28px/30px var(--wk-font); color: var(--wk-fg-accent); }
+  .dark .day span { font: 600 12px/16px var(--wk-font); color: var(--wk-fg-inverse-muted); }
+  .dark .when p { font: 500 14px/20px var(--wk-font); color: var(--wk-fg-inverse); }
+  .dark .when p b { display: block; font-size: 16px; }
+  .dark .actions { display: flex; gap: var(--wk-space-10); align-items: center; }
+  .cal { display: flex; gap: 6px; justify-content: space-between; }
+  .cal .d { flex: 1; height: 58px; border-radius: var(--wk-radius-md); background: var(--wk-bg-surface); border: 1px solid var(--wk-border-default); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .cal .d small { font: 600 11px/14px var(--wk-font); color: var(--wk-fg-muted); }
+  .cal .d b { font: 700 16px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .cal .d.on { background: var(--wk-action-primary); border-color: var(--wk-action-primary); }
+  .cal .d.on small, .cal .d.on b { color: var(--wk-fg-inverse); }
+  .cal .d.has { border-color: var(--wk-border-info); }
+  .time { font: 700 14px/20px var(--wk-font); color: var(--wk-fg-attention); white-space: nowrap; }
+  .source { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-muted); margin-top: var(--wk-space-10); }
+</style>
+</head>
+<body>
+<main class="screen" aria-label="Foire de Kaffrine">
+  <div class="statusbar"><span>9:41</span><span class="sys">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+  </span></div>
+
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="title"><small>Explorer · Événements</small><b>Foire de Kaffrine</b></div>
+    <div class="round" aria-label="Partager"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></div>
+  </header>
+
+  <div class="content">
+    <div class="zone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#015AA9" stroke-width="2" stroke-linecap="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Kaffrine et alentours</div>
+
+    <section class="dark">
+      <div class="head"><span class="pill on-dark">Événement</span><span class="pill on-dark">À 38 km de Koungheul</span></div>
+      <div class="when">
+        <div class="day"><b>24</b><span>oct.</span></div>
+        <p><b>Foire des transformatrices</b>Samedi, de 9 h à 17 h<br>Place de l’Indépendance, Kaffrine</p>
+      </div>
+      <div class="actions">
+        <div class="btn white grow">Je m’y inscris</div>
+        <div class="listen" aria-label="Écouter"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">Dans ton agenda</h3>
+      <p class="section-sub">La semaine du 19 oct. Ajoute la foire d’un geste.</p>
+      <div class="cal" aria-label="Semaine du 19 octobre">
+        <div class="d"><small>Lun</small><b>19</b></div>
+        <div class="d has"><small>Mar</small><b>20</b></div>
+        <div class="d"><small>Mer</small><b>21</b></div>
+        <div class="d"><small>Jeu</small><b>22</b></div>
+        <div class="d"><small>Ven</small><b>23</b></div>
+        <div class="d on"><small>Sam</small><b>24</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">Ce que tu y trouves</h3>
+      <div class="card tight">
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1 11H5L4 9Z"/><path d="M8 9V7a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="txt"><small>Stands</small><b>40 transformatrices</b><span>Mil, arachide, bissap, fonio</span></div>
+        </div>
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
+          <div class="txt"><small>Rencontre</small><b>Mutuelle Jappo</b><span>Un conseiller répond à tes questions</span></div>
+          <span class="time">11 h</span>
+        </div>
+        <div class="row">
+          <div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 14H7L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+          <div class="txt"><small>Atelier</small><b>Choisir ton emballage</b><span>Gratuit, 20 places</span></div>
+          <span class="time">14 h</span>
+        </div>
+      </div>
+      <p class="source">Information donnée par la Chambre de commerce de Kaffrine · 3&nbsp;oct.</p>
+    </section>
+
+    <div class="callout neutral">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>Venir avec une autre transformatrice ? <b>Vous pouvez partager le transport.</b> Khady, ton relais, peut t’aider à t’organiser.</span>
+    </div>
+    <div class="btn outline">Parler à Khady</div>
+  </div>
+</main>
+</body>
+</html>

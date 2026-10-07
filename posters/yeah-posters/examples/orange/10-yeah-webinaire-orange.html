@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YEAH — Webinaire · filière orange (maquette)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- « Table ronde » composition: the orange slice is the round table, the four voices sit around it.
+     Capture-safe: decorative layers in .deco (baked to a JPEG before the Figma capture). -->
+<style>
+  :root { --ink:#062b22; --g1:#0a4535; --or:#ff8a1f; --or2:#ffb547; --or3:#ffd98a; --red:#ff3b3b; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  img { display:block; }
+  body { background:#cfd3d0; font-family:"Open Sans",system-ui,Segoe UI,Arial,sans-serif; display:flex; flex-direction:column; align-items:center; gap:12px; padding:24px 12px 60px; }
+  .note { font-size:12px; color:#555; max-width:756px; width:100%; }
+  .poster { width:1080px; height:1350px; position:relative; overflow:hidden; flex:none; color:#fff; zoom:.7; box-shadow:0 24px 60px rgba(0,0,0,.35);
+            background:linear-gradient(180deg, var(--g1) 0%, var(--ink) 55%, #03180f 100%); }
+  .deco, .content, .layer { position:absolute; inset:0; }
+  .bgimg { position:absolute; inset:0; width:1080px; height:1350px; }
+
+  /* ---- decorative layers (baked) ---- */
+  .sun { background:radial-gradient(520px 520px at 540px 800px, rgba(255,138,31,.55), rgba(255,138,31,.12) 55%, transparent 72%); }
+  .ripples { background:
+      radial-gradient(circle at 540px 800px, transparent 300px, rgba(255,217,138,.22) 301px, rgba(255,217,138,.22) 303px, transparent 304px,
+                      transparent 380px, rgba(255,217,138,.14) 381px, rgba(255,217,138,.14) 383px, transparent 384px,
+                      transparent 470px, rgba(255,217,138,.08) 471px, rgba(255,217,138,.08) 473px, transparent 474px); }
+  .slices { opacity:.06; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'><g fill='none' stroke='white' stroke-width='3'><circle cx='48' cy='52' r='30'/><path d='M48 22v60M18 52h60M27 31l42 42M69 31L27 73'/><circle cx='128' cy='126' r='22'/><path d='M128 104v44M106 126h44'/></g></svg>"); background-size:170px 170px; }
+  .wm { position:absolute; right:-200px; top:120px; width:760px; opacity:.045; transform:rotate(10deg); }
+  .grain { opacity:.15; mix-blend-mode:overlay; background-image:radial-gradient(rgba(255,255,255,.5) 1px, transparent 1.2px); background-size:5px 5px; }
+
+  /* ---- content ---- */
+  .cjs { position:absolute; left:52px; top:44px; height:58px; }
+  .yeah { position:absolute; left:50%; top:36px; transform:translateX(-50%); height:84px; }
+  .mcf { position:absolute; right:52px; top:30px; height:88px; }
+  .mq { position:absolute; left:52px; top:132px; font:700 14px "Open Sans",sans-serif; letter-spacing:2px; color:#fff; background:#e83c3c; padding:7px 14px; border-radius:20px; }
+
+  .badge { position:absolute; left:56px; top:196px; display:flex; align-items:center; gap:12px; padding:10px 24px; border-radius:40px;
+           background:rgba(255,255,255,.10); border:1.5px solid rgba(255,217,138,.6); font:700 22px "Fredoka",sans-serif; letter-spacing:2px; }
+  .badge i { width:12px; height:12px; border-radius:50%; background:var(--red); box-shadow:0 0 12px var(--red); display:block; }
+  h1 { position:absolute; left:52px; top:250px; width:640px; font:700 100px/0.94 "Fredoka",sans-serif; letter-spacing:-2.5px; color:#fff; }
+  h1 em { font-style:normal; color:var(--or2); }
+  .sub { position:absolute; left:56px; top:452px; width:600px; font:500 25px/1.32 "Fredoka",sans-serif; color:rgba(255,255,255,.88); }
+
+  /* date ticket */
+  .ticket { position:absolute; left:744px; top:196px; width:284px; height:250px; border-radius:30px; background:#fff; color:var(--ink); transform:rotate(3deg);
+            box-shadow:0 26px 50px rgba(0,0,0,.4); text-align:center; padding-top:22px; }
+  .ticket .day { display:block; font:700 20px "Fredoka",sans-serif; letter-spacing:4px; color:#c0620a; }
+  .ticket b { display:block; font:700 96px/0.9 "Fredoka",sans-serif; letter-spacing:-3px; }
+  .ticket .month { display:block; font:700 18px "Open Sans",sans-serif; letter-spacing:3px; margin-top:4px; }
+  .ticket .hr { display:block; margin:14px 26px 0; padding-top:12px; border-top:2px dashed rgba(6,43,34,.18); font:700 24px "Fredoka",sans-serif; color:var(--or); }
+  .ticket .hr small { display:block; font:600 13px "Open Sans",sans-serif; color:rgba(6,43,34,.6); letter-spacing:.5px; }
+
+  /* the round table */
+  .slice { position:absolute; left:290px; top:550px; width:500px; height:500px; border-radius:50%; box-shadow:0 30px 70px rgba(0,0,0,.55), 0 0 0 10px rgba(255,255,255,.95); }
+  .slice img { width:500px; height:500px; }
+  .table-tag { position:absolute; left:50%; top:776px; transform:translateX(-50%); padding:10px 22px; border-radius:30px; background:var(--ink); border:2px solid var(--or3);
+               font:700 18px "Fredoka",sans-serif; letter-spacing:3px; white-space:nowrap; box-shadow:0 10px 24px rgba(0,0,0,.4); }
+
+  .seat { position:absolute; width:240px; text-align:center; }
+  .seat .face { width:150px; height:150px; margin:0 auto; border-radius:50%; overflow:hidden; border:6px solid #fff; box-shadow:0 16px 34px rgba(0,0,0,.45); }
+  .seat.mod .face { border-color:var(--or); box-shadow:0 0 0 6px rgba(255,138,31,.35), 0 16px 34px rgba(0,0,0,.45); }
+  .seat .face img { width:100%; height:100%; object-fit:cover; object-position:50% 22%; }
+  .seat .name { display:inline-block; margin-top:-16px; position:relative; padding:9px 18px 8px; border-radius:24px; background:#fff; color:var(--ink); font:700 21px/1.1 "Fredoka",sans-serif; box-shadow:0 10px 22px rgba(0,0,0,.3); }
+  .seat.mod .name { background:linear-gradient(90deg,var(--or),var(--or2)); color:#2a1200; }
+  .seat .role { display:block; margin-top:8px; font:600 14.5px/1.3 "Open Sans",sans-serif; color:rgba(255,255,255,.88); }
+  .seat .role b { color:var(--or3); font-weight:700; }
+
+  .cta { position:absolute; left:56px; right:56px; top:1112px; height:84px; display:flex; align-items:center; gap:26px; }
+  .btn { flex:none; background:linear-gradient(90deg,var(--or),var(--or2)); color:#2a1200; font:700 27px "Fredoka",sans-serif; padding:20px 36px; border-radius:50px; box-shadow:0 14px 30px rgba(0,0,0,.4); }
+  .agenda { display:flex; gap:22px; font:600 17px "Open Sans",sans-serif; color:rgba(255,255,255,.9); }
+  .agenda b { display:block; font:700 24px "Fredoka",sans-serif; color:var(--or3); }
+
+  .foot { position:absolute; left:0; right:0; bottom:0; height:130px; background:#fff; border-radius:48px 48px 0 0; display:flex; align-items:center; justify-content:center; box-shadow:0 -14px 40px rgba(0,0,0,.25); }
+  .foot img { height:96px; clip-path:inset(8px 10px 8px 10px); }
+
+  html.bake body { padding:0; background:none; display:block; }
+  html.bake .note { display:none; }
+  html.bake .poster { zoom:1; box-shadow:none; }
+  html.bake .content { visibility:hidden; }
+</style>
+<script>if (location.hash.indexOf('bake') > -1) document.documentElement.className = 'bake';</script>
+</head>
+<body>
+<p class="note">YEAH — Webinaire · filière orange · MAQUETTE · thème, date et intervenants inventés ; photos illustratives sous licence libre (voir <code>assets/photos/credits.json</code> et <code>assets/people/credits.json</code>).</p>
+
+<div class="poster" data-od-id="poster-canvas">
+  <!--DECO-->
+  <div class="deco">
+    <div class="layer sun"></div>
+    <div class="layer ripples"></div>
+    <div class="layer slices"></div>
+    <img class="wm" src="../../assets/logo-yeah.png" alt="" aria-hidden="true" />
+    <div class="layer grain"></div>
+  </div>
+  <!--/DECO-->
+
+  <div class="content">
+    <img class="cjs" src="../../assets/logo-cjs.png" alt="Consortium Jeunesse Sénégal" />
+    <img class="yeah" src="../../assets/logo-yeah.png" alt="YEAH — Yaakaar Jeunesse &amp; Entrepreneuriat" />
+    <img class="mcf" src="../../assets/logo-mastercard-foundation.png" alt="Mastercard Foundation" />
+    <div class="mq" data-od-id="maquette-tag">MAQUETTE · PHOTOS ILLUSTRATIVES</div>
+
+    <div class="badge" data-od-id="format-badge"><i></i>WEBINAIRE · ZOOM</div>
+    <h1 data-od-id="headline">Transformer<br><em>l’orange</em></h1>
+    <p class="sub" data-od-id="subtitle">Jus, confitures, écorces séchées : quels débouchés pour les jeunes transformateurs ?</p>
+
+    <div class="ticket" data-od-id="date-ticket"><span class="day">MARDI</span><b>09</b><span class="month">JUIN 2026</span><span class="hr">17H00<small>Heure de Dakar</small></span></div>
+
+    <div class="slice" data-od-id="hero-image"><img src="../../assets/photos/photo-orange-tranche.png" alt="Photo illustrative (maquette) — tranche d’orange" /></div>
+    <div class="table-tag">TABLE RONDE · 4 VOIX</div>
+
+    <div class="seat mod" data-od-id="moderator" style="left:24px;top:540px"><div class="face"><img src="../../assets/people/moderatrice.jpg" alt="Photo illustrative (maquette)" /></div><span class="name">Awa Mbaye</span><span class="role"><b>Modératrice</b> · YEAH (fictif)</span></div>
+    <div class="seat" data-od-id="speaker-1" style="right:24px;top:540px"><div class="face"><img src="../../assets/people/panel-a.jpg" alt="Photo illustrative (maquette)" /></div><span class="name">Lamine Diatta</span><span class="role">Producteur d’agrumes,<br>Ziguinchor (fictif)</span></div>
+    <div class="seat" data-od-id="speaker-2" style="left:24px;top:850px"><div class="face"><img src="../../assets/people/panel-b.jpg" alt="Photo illustrative (maquette)" /></div><span class="name">Aminata Sané</span><span class="role">Fondatrice,<br>jus Kassoumay (fictif)</span></div>
+    <div class="seat" data-od-id="speaker-3" style="right:24px;top:850px"><div class="face"><img src="../../assets/people/panel-c.jpg" alt="Photo illustrative (maquette)" /></div><span class="name">Pape Ndiaye</span><span class="role">Logistique et froid,<br>Dakar (fictif)</span></div>
+
+    <div class="cta" data-od-id="cta">
+      <div class="btn">S’inscrire gratuitement</div>
+      <div class="agenda" data-od-id="agenda"><span><b>17h00</b>Ouverture</span><span><b>17h20</b>Table ronde</span><span><b>18h15</b>Vos questions</span></div>
+    </div>
+
+    <div class="foot" data-od-id="partners"><img src="../../assets/partners-yeah-strip.png" alt="Projet mis en œuvre par : CONCREE, ACCEENT, Yeesal AgriHub, Impact Hub, Declic, Volkeno" /></div>
+  </div>
+</div>
+</body>
+</html>

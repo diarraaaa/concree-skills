@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YEAH — Atelier présentiel · filière orange (maquette)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Capture-safe: decorative layers in .deco (baked to a JPEG before the Figma capture). -->
+<style>
+  :root { --ink:#07342a; --ink2:#0e5340; --or:#ff8a1f; --or2:#ffb547; --or-ink:#b8620a; --cream:#fdf6ea; --sand:#f6e3c4; --red:#d8432c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  img { display:block; }
+  body { background:#cfd3d0; font-family:"Open Sans",system-ui,Segoe UI,Arial,sans-serif; display:flex; flex-direction:column; align-items:center; gap:14px; padding:28px 12px 60px; }
+  .note { font-size:12px; color:#555; max-width:756px; width:100%; }
+  .poster { width:1080px; height:1350px; position:relative; overflow:hidden; flex:none; color:var(--ink); zoom:.7; box-shadow:0 24px 60px rgba(0,0,0,.35);
+            background:linear-gradient(158deg, #fffaf1 0%, var(--cream) 42%, var(--sand) 100%); }
+  .deco, .content, .layer { position:absolute; inset:0; }
+  .bgimg { position:absolute; inset:0; width:1080px; height:1350px; }
+
+  /* ---- decorative layers (baked) ---- */
+  .sky { background:
+           radial-gradient(760px 620px at 8% 6%, rgba(255,255,255,.95), transparent 62%),
+           radial-gradient(820px 660px at 96% 92%, rgba(255,170,70,.45), transparent 62%),
+           radial-gradient(640px 640px at 84% 24%, rgba(38,164,118,.18), transparent 64%); }
+  .half { background:url(../../assets/photos/photo-orange-demi.jpg) 70% 50%/cover; opacity:.30; mix-blend-mode:multiply;
+          -webkit-mask-image:radial-gradient(ellipse 52% 40% at 18% 98%, #000 12%, transparent 72%);
+                  mask-image:radial-gradient(ellipse 52% 40% at 18% 98%, #000 12%, transparent 72%); }
+  .slices { opacity:.10; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170'><g fill='none' stroke='%23b8620a' stroke-width='3'><circle cx='48' cy='52' r='30'/><path d='M48 22v60M18 52h60M27 31l42 42M69 31L27 73'/><circle cx='128' cy='126' r='22'/><path d='M128 104v44M106 126h44'/><path d='M120 30c8-10 20-12 30-8-6 9-18 13-30 8Z'/></g></svg>"); background-size:170px 170px; }
+  .wm { position:absolute; left:-150px; bottom:-120px; width:820px; opacity:.07; transform:rotate(-8deg); }
+  .band { position:absolute; left:0; right:0; top:0; height:312px; border-radius:0 0 64px 64px;
+          background:radial-gradient(600px 300px at 85% 0%, rgba(255,138,31,.35), transparent 70%), linear-gradient(165deg,#0d5b46,#06382c 60%,#04261d);
+          box-shadow:0 18px 40px rgba(7,52,42,.25); }
+  .sun { position:absolute; right:-120px; top:330px; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle, rgba(255,150,40,.40), transparent 64%); filter:blur(8px); }
+  .grain { opacity:.18; mix-blend-mode:overlay; background-image:radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.2px); background-size:5px 5px; }
+
+  /* ---- content ---- */
+  .cjs { position:absolute; left:52px; top:44px; height:58px; }
+  .mcf { position:absolute; right:52px; top:34px; height:88px; }
+  .yeah { position:absolute; left:50%; top:150px; transform:translateX(-50%); height:100px; }
+  .mq { position:absolute; left:52px; top:118px; font:700 14px "Open Sans",sans-serif; letter-spacing:2px; color:#fff; background:var(--red); padding:7px 14px; border-radius:20px; }
+  .badge { position:absolute; left:50%; top:282px; transform:translateX(-50%); display:flex; align-items:center; gap:12px; padding:12px 32px; border-radius:60px;
+           background:linear-gradient(135deg,var(--or),var(--or2)); color:#3a1e00; font:700 26px "Fredoka",sans-serif; letter-spacing:2px; white-space:nowrap;
+           box-shadow:0 16px 32px rgba(255,138,31,.35); }
+  .badge i { width:16px; height:16px; border-radius:4px; background:#3a1e00; opacity:.75; display:block; }
+
+  .theme-l { position:absolute; left:58px; top:410px; display:flex; align-items:center; gap:14px; font:600 22px "Fredoka",sans-serif; letter-spacing:4px; text-transform:uppercase; color:var(--or-ink); }
+  .theme-l .rule { width:84px; height:2px; background:linear-gradient(90deg,var(--or-ink),rgba(184,98,10,0)); }
+  h1 { position:absolute; left:52px; top:444px; width:620px; font:700 90px/0.95 "Fredoka",sans-serif; letter-spacing:-2px; color:var(--ink); }
+  h1 em { font-style:normal; color:var(--or); }
+  .sub { position:absolute; left:58px; top:632px; width:590px; font:600 28px/1.3 "Fredoka",sans-serif; color:var(--ink2); }
+  .kpis { position:absolute; left:58px; top:728px; display:flex; gap:10px; flex-wrap:wrap; width:600px; }
+  .kpis span { font:700 14.5px "Open Sans",sans-serif; letter-spacing:.6px; color:var(--ink2); background:rgba(255,138,31,.10); border:1.5px solid rgba(184,98,10,.28); border-radius:30px; padding:9px 16px; }
+
+  .shot { position:absolute; left:690px; top:418px; width:346px; height:446px; border-radius:40px; overflow:hidden;
+          border:9px solid #fff; box-shadow:0 34px 60px rgba(120,60,0,.28); transform:rotate(1.2deg); }
+  .shot > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% 50%; }
+  .shot .shade { position:absolute; left:0; right:0; bottom:0; height:240px; background:linear-gradient(0deg,rgba(60,25,0,.55),rgba(60,25,0,0)); }
+  .shot .cap { position:absolute; left:18px; right:18px; bottom:16px; color:#fff; font:700 14px "Open Sans",sans-serif; letter-spacing:1.6px; }
+  .date { position:absolute; right:26px; top:352px; width:168px; height:168px; border-radius:50%; transform:rotate(-7deg);
+          background:linear-gradient(140deg,var(--or2),var(--or) 55%,#ee7410); color:#3a1e00; display:flex; align-items:center; justify-content:center; text-align:center;
+          box-shadow:0 22px 40px rgba(240,138,28,.42), 0 0 0 9px rgba(255,255,255,.88); }
+  .date span { display:block; font:700 17px "Fredoka",sans-serif; letter-spacing:3px; }
+  .date b { display:block; font:700 68px/0.86 "Fredoka",sans-serif; letter-spacing:-2px; }
+  .date small { display:block; font:700 14px "Open Sans",sans-serif; letter-spacing:1.4px; margin-top:3px; }
+
+  .rail { position:absolute; left:56px; right:44px; top:904px; height:232px; border-radius:38px;
+          display:flex; align-items:center; gap:26px; padding:0 34px;
+          background:rgba(255,255,255,.86); border:1.5px solid #fff; box-shadow:0 30px 60px rgba(120,60,0,.20); }
+  .blk { display:flex; gap:18px; align-items:flex-start; }
+  .blk.sep { border-left:1.5px solid rgba(7,52,42,.11); padding-left:26px; }
+  .blk.time { flex:1.05; } .blk.place { flex:1.4; }
+  .ic { width:64px; height:64px; flex:none; border-radius:20px; display:flex; align-items:center; justify-content:center; background:rgba(255,138,31,.14); border:1.5px solid rgba(184,98,10,.4); }
+  .ic svg { width:34px; height:34px; stroke:var(--or-ink); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .lb { display:block; font:700 13px "Open Sans",sans-serif; letter-spacing:2.4px; color:var(--or-ink); }
+  .vl { display:block; white-space:nowrap; font:700 26px/1.12 "Fredoka",sans-serif; color:var(--ink); margin-top:3px; }
+  .vs { display:block; font:600 15px/1.3 "Open Sans",sans-serif; color:rgba(7,52,42,.72); margin-top:4px; }
+  .plc { width:122px; flex:none; text-align:center; display:block; }
+  .plc b { display:block; font:700 82px/0.9 "Fredoka",sans-serif; color:var(--ink); letter-spacing:-2px; }
+  .plc span { display:block; font:700 15px/1.25 "Open Sans",sans-serif; letter-spacing:2px; color:var(--or-ink); margin-top:4px; }
+  .plc small { display:block; font:600 12.5px/1.25 "Open Sans",sans-serif; color:rgba(7,52,42,.66); margin-top:6px; }
+  .cta { width:240px; flex:none; }
+  .btn { display:block; text-align:center; background:linear-gradient(135deg,var(--or),var(--or2)); color:#3a1e00; font:700 26px "Fredoka",sans-serif;
+         padding:20px 18px; border-radius:50px; box-shadow:0 16px 30px rgba(240,138,28,.38); }
+  .cta small { display:block; text-align:center; font:600 14.5px/1.3 "Open Sans",sans-serif; color:rgba(7,52,42,.72); margin-top:10px; }
+
+  .bar { position:absolute; left:0; right:0; bottom:0; height:148px; background:#fff; border-radius:56px 56px 0 0; display:flex; align-items:center; justify-content:center; box-shadow:0 -16px 44px rgba(120,60,0,.18); }
+  .bar img { height:108px; clip-path:inset(8px 10px 8px 10px); }
+
+  html.bake body { padding:0; background:none; display:block; }
+  html.bake .note { display:none; }
+  html.bake .poster { zoom:1; box-shadow:none; }
+  html.bake .content { visibility:hidden; }
+</style>
+<script>if (location.hash.indexOf('bake') > -1) document.documentElement.className = 'bake';</script>
+</head>
+<body>
+<p class="note">YEAH — Atelier présentiel · filière orange · MAQUETTE · thème, date, lieu et chiffres inventés ; photos illustratives sous licence libre (voir <code>assets/photos/credits.json</code>).</p>
+
+<div class="poster" data-od-id="poster-canvas">
+  <!--DECO-->
+  <div class="deco">
+    <div class="layer sky"></div>
+    <div class="layer half" data-od-id="hero-photo-watermark"></div>
+    <div class="layer slices"></div>
+    <div class="sun"></div>
+    <div class="band"></div>
+    <img class="wm" src="../../assets/logo-yeah.png" alt="" aria-hidden="true" />
+    <div class="layer grain"></div>
+  </div>
+  <!--/DECO-->
+
+  <div class="content">
+    <img class="cjs" src="../../assets/logo-cjs.png" alt="Consortium Jeunesse Sénégal" />
+    <img class="mcf" src="../../assets/logo-mastercard-foundation.png" alt="Mastercard Foundation" />
+    <div class="mq" data-od-id="maquette-tag">MAQUETTE · PHOTOS ILLUSTRATIVES</div>
+    <img class="yeah" src="../../assets/logo-yeah.png" alt="YEAH — Yaakaar Jeunesse &amp; Entrepreneuriat" />
+    <div class="badge" data-od-id="format-badge"><i></i>ATELIER PRÉSENTIEL</div>
+
+    <div class="theme-l">Atelier pratique <span class="rule"></span></div>
+    <h1 data-od-id="headline">Trier, presser,<br><em>conserver.</em></h1>
+    <p class="sub" data-od-id="subtitle">Trois gestes pour transformer l’orange du marché en jus qui se garde et se vend.</p>
+    <div class="kpis" data-od-id="kpi-strip">
+      <span>Tri des fruits</span><span>Pressage</span><span>Pasteurisation</span><span>Étiquetage</span><span>Prix de vente</span>
+    </div>
+
+    <div class="shot" data-od-id="hero-image">
+      <img src="../../assets/photos/photo-jus-orange.jpg" alt="Photo illustrative (maquette) — jus d’orange versé dans un verre" />
+      <div class="shade"></div>
+      <div class="cap">MAQUETTE · PHOTO ILLUSTRATIVE</div>
+    </div>
+    <div class="date" data-od-id="date-badge"><div><span>VENDREDI</span><b>12</b><small>JUIN 2026</small></div></div>
+
+    <div class="rail" data-od-id="info-rail">
+      <div class="blk time">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+        <div><span class="lb">HORAIRE</span><span class="vl">09H00 — 13H00</span><span class="vs">Accueil dès 08h30</span></div>
+      </div>
+      <div class="blk plc sep"><b>20</b><span>PARTICIPANTS<br>MAXIMUM</span><small>Places fictives</small></div>
+      <div class="blk place sep">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 0 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><span class="lb">LIEU</span><span class="vl">Ziguinchor</span><span class="vs">Adresse envoyée à l’inscription (maquette)</span></div>
+      </div>
+      <div class="cta" data-od-id="cta"><div class="btn">Réserver ma place</div><small>Gratuit · inscription obligatoire</small></div>
+    </div>
+
+    <div class="bar" data-od-id="partners"><img src="../../assets/partners-yeah-strip.png" alt="Projet mis en œuvre par : CONCREE, ACCEENT, Yeesal AgriHub, Impact Hub, Declic, Volkeno" /></div>
+  </div>
+</div>
+</body>
+</html>

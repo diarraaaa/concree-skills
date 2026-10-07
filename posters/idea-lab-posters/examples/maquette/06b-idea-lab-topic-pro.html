@@ -1,0 +1,75 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Idea Lab — slide thématique (maquette)</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:#f3f1ee;--ink:#14212e;--navy:#0c1b2a;--green:#2fa84f;--yellow:#f5a623;--red:#e8503a;--teal:#1e8e6e;--gold:#f5c96d;--mint:#8ef0c0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d6;font-family:"Poppins","Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px 60px;gap:12px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.slide{position:relative;overflow:hidden;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.28);isolation:isolate}
+.layer{position:absolute;inset:0;pointer-events:none}
+img{display:block}
+.ic{width:26px;height:26px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+.slide{width:1080px;height:1080px;zoom:0.62}
+
+/* ============ IDEA LAB — SLIDE THÉMATIQUE (emerald) ============ */
+.tp{background:radial-gradient(720px 620px at 96% 4%,rgba(245,201,109,.20),transparent 62%),radial-gradient(700px 680px at 2% 98%,rgba(30,142,110,.55),transparent 66%),linear-gradient(160deg,#10403４,#08221d 58%,#0b2b24)}
+.hero{background:url("../../assets/photos/photo-agricultrice-champ.jpg") 62% 42%/cover;opacity:.30;mix-blend-mode:luminosity;-webkit-mask-image:linear-gradient(105deg,transparent 2%,rgba(0,0,0,.5) 35%,#000 62%,transparent 96%);mask-image:linear-gradient(105deg,transparent 2%,rgba(0,0,0,.5) 35%,#000 62%,transparent 96%)}
+.tint{background:linear-gradient(120deg,rgba(30,142,110,.34),transparent 52%,rgba(8,34,29,.55))}
+.motif{opacity:.08;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='230' viewBox='0 0 230 230'><g fill='none' stroke='%23f5c96d' stroke-width='3'><path d='M34 196c0-62 42-104 104-104 0 62-42 104-104 104Z'/><path d='M34 196c40-40 72-74 104-104'/><circle cx='176' cy='40' r='12'/><path d='M150 206h44'/></g></svg>");background-size:230px 230px;-webkit-mask-image:radial-gradient(ellipse 60% 58% at 84% 78%,#000,transparent 74%);mask-image:radial-gradient(ellipse 60% 58% at 84% 78%,#000,transparent 74%)}
+.wm{position:absolute;right:-70px;bottom:120px;width:600px;opacity:.06;filter:brightness(2.6);transform:rotate(-7deg)}
+.glow{position:absolute;border-radius:50%;filter:blur(70px)}
+.g1{right:-90px;top:60px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,201,109,.34),transparent 70%)}
+.g2{left:210px;bottom:-40px;width:560px;height:560px;background:radial-gradient(circle,rgba(47,168,79,.42),transparent 70%)}
+.grain{opacity:.18;mix-blend-mode:overlay;background-image:radial-gradient(rgba(0,0,0,.55) 1px,transparent 1.2px);background-size:5px 5px}
+
+.tcard{position:absolute;left:48px;top:40px;width:184px;height:120px;border-radius:28px;background:#fff;display:grid;place-items:center;box-shadow:0 18px 40px rgba(0,0,0,.34)}
+.tcard img{height:88px}
+.cl{position:absolute;right:56px;top:58px;height:44px}
+.dots{position:absolute;right:58px;top:132px;display:flex;gap:9px;align-items:center}
+.dots i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.30);display:block}
+.dots i.on{width:32px;border-radius:7px;background:linear-gradient(90deg,var(--gold),var(--green))}
+.nm{position:absolute;right:6px;top:236px;font:800 440px/0.8 "Space Grotesk";letter-spacing:-18px;color:transparent;-webkit-text-stroke:2px rgba(245,201,109,.11)}
+.lab{position:absolute;left:470px;top:196px;font:700 23px "Space Grotesk";letter-spacing:6px;color:var(--gold)}
+.hl{position:absolute;left:470px;right:52px;top:250px;font:800 66px/1.06 "Poppins";letter-spacing:-1.6px;color:#fff}
+.hl b{background:linear-gradient(92deg,var(--mint),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.chips{position:absolute;left:470px;right:52px;top:486px;height:56px;display:flex;gap:9px}
+.chip{flex:1;display:flex;align-items:center;gap:10px;padding:0 12px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);font:600 18px/1 "Poppins";color:#eaf5f0;box-shadow:inset 0 1px 0 rgba(255,255,255,.22);white-space:nowrap}
+.chip .ic{width:22px;height:22px;color:var(--mint)}
+.card{position:absolute;left:470px;right:52px;top:566px;bottom:170px;border-radius:40px;padding:34px 44px 40px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.28);box-shadow:0 26px 58px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.30)}
+.card h3{font:700 20px "Space Grotesk";letter-spacing:4px;color:var(--gold);margin-bottom:16px}
+.card p{font:400 28px/1.45 "Poppins";color:#eaf5f0}
+
+.ph{position:absolute;left:0;top:230px;width:430px;height:680px;border-radius:0 80px 80px 0;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.48);z-index:2}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:48% 42%}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(30,142,110,.30),rgba(8,34,29,.52));mix-blend-mode:multiply}
+.ph::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(11,43,36,0) 58%,rgba(11,43,36,.92))}
+.pnum{position:absolute;left:196px;top:846px;z-index:5;font:700 20px "Space Grotesk";letter-spacing:2px;color:#0b2b24;background:var(--gold);padding:13px 22px;border-radius:999px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+
+.bar{position:absolute;left:34px;right:34px;bottom:44px;height:112px;border-radius:32px;background:rgba(255,255,255,.95);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 38px rgba(0,0,0,.30);display:grid;place-items:center}
+.bar img{height:84px}
+.pcred{position:absolute;right:46px;bottom:12px;font:500 15px "Poppins";color:#a7c9bd}
+</style></head><body>
+<p class="note">Idea Lab — slide thématique · MAQUETTE · exemple fictif · contenus à remplacer · logos réels (Idea Lab, CONCREE, MESRI, KOICA, KPC) · photos réelles illustratives (voir assets/photos/credits.json)</p>
+<div class="slide tp" data-od-id="carousel-topic">
+<div class="layer hero"></div><div class="layer tint"></div>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="layer motif"></div>
+<div class="nm" aria-hidden="true">03</div>
+<img class="wm" src="../../assets/logo-idealab.png" alt="" aria-hidden="true" />
+<div class="tcard"><img src="../../assets/logo-idealab.png" alt="Idea Lab" /></div>
+<img class="cl" src="../../assets/logo-concree-dark.png" alt="CONCREE" />
+<div class="dots"><i></i><i></i><i class="on"></i><i></i></div>
+<div class="lab" data-od-id="topic-eyebrow">THÈME 03 · MAQUETTE</div>
+<div class="hl" data-od-id="topic-headline">Du prototype au <b>premier client</b></div>
+<div class="chips" data-od-id="topic-cta">
+<div class="chip"><svg class="ic" viewBox="0 0 24 24"><rect x="3.2" y="5.2" width="17.6" height="15.6" rx="3.2"/><path d="M8 3.2v4M16 3.2v4M3.2 10.4h17.6"/></svg>JJ mois AAAA</div>
+<div class="chip"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.2 2"/></svg>3 h (maquette)</div>
+<div class="chip"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21.2s6.4-6 6.4-11a6.4 6.4 0 1 0-12.8 0c0 5 6.4 11 6.4 11Z"/><circle cx="12" cy="10.2" r="2.4"/></svg>Dakar &amp; en ligne</div>
+</div>
+<div class="ph" data-od-id="topic-photo"><img src="../../assets/photos/photo-jeune-plant.jpg" alt="Photo illustrative : jeunes plants en pépinière (maquette)" /></div>
+<div class="pnum">SLIDE 03 / 04 (MAQUETTE)</div>
+<div class="card"><h3>CE QUE VOUS Y TROUVEREZ</h3><p data-od-id="topic-body">Trois étapes pour passer du prototype à l'offre vendable : cadrage de la proposition de valeur, test terrain auprès de producteurs pilotes, puis dossier de financement — session animée par deux mentors (maquette).</p></div>
+<div class="bar"><img src="../../assets/partners-cover-strip.png" alt="MESRI · KOICA · KPC consortium" /></div>
+<div class="pcred" data-od-id="topic-credit">Photos : Geossegawa / CC BY 4.0 · Issiaga0 / CC BY-SA 4.0 · Wikimedia Commons — MAQUETTE · exemple fictif · contenus à remplacer</div>
+<div class="layer grain"></div></div>
+</body></html>

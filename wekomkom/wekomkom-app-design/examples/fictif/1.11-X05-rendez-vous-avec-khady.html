@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- 1.11-X05 · Rendez-vous avec Khady, relais (fictif) — FICTIONAL slot-picking screen of « Parler à quelqu'un » (1.11).
+     Close to the existing relais flow: compare before reusing. One primary button (Confirmer), choice by pills with icon + word,
+     phone or visit offered, the humain relais photo = initials stand-in. Placeholders only. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Rendez-vous avec Khady</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .person { display: flex; align-items: center; gap: var(--wk-space-15); }
+  .person .avatar { width: 56px; height: 56px; font-size: 18px; }
+  .person b { display: block; font: 700 16px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .person span { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--wk-space-10); }
+  .chip { height: 44px; padding: 0 16px; border-radius: var(--wk-radius-pill); border: 1.5px solid var(--wk-border-control); background: var(--wk-bg-surface); display: inline-flex; align-items: center; gap: 8px; font: 700 14px/16px var(--wk-font); color: var(--wk-fg-secondary); }
+  .chip.on { border-color: var(--wk-action-primary); background: var(--wk-action-primary); color: var(--wk-fg-inverse); }
+  .chip.off { color: var(--wk-fg-muted); background: var(--wk-bg-surface-muted); border-color: var(--wk-border-default); text-decoration: line-through; }
+  .days { display: flex; gap: 6px; }
+  .days .d { flex: 1; height: 62px; border-radius: var(--wk-radius-md); background: var(--wk-bg-surface); border: 1px solid var(--wk-border-default); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .days .d small { font: 600 11px/14px var(--wk-font); color: var(--wk-fg-muted); }
+  .days .d b { font: 700 18px/22px var(--wk-font); color: var(--wk-fg-title); }
+  .days .d.on { border: 2px solid var(--wk-action-primary); }
+  .modes { display: flex; gap: var(--wk-space-10); }
+  .mode { flex: 1; padding: 14px; border-radius: var(--wk-radius-md); background: var(--wk-bg-surface); border: 1px solid var(--wk-border-default); box-shadow: var(--wk-elevation-1); display: flex; flex-direction: column; gap: 6px; }
+  .mode.on { border: 2px solid var(--wk-action-primary); padding: 13px; }
+  .mode b { font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .mode span { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .source { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-muted); margin-top: var(--wk-space-10); }
+</style>
+</head>
+<body>
+<main class="screen fixed" aria-label="Rendez-vous avec Khady">
+  <div class="statusbar"><span>9:41</span><span class="sys">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+  </span></div>
+
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="title"><small>Parler à quelqu’un</small><b>Rendez-vous avec Khady</b></div>
+    <div class="spacer-40"></div>
+  </header>
+
+  <div class="content" style="padding-bottom:140px">
+    <div class="card person">
+      <span class="avatar">KS</span>
+      <div><b>Khady Sarr</b><span>Relais · Chambre de commerce de Kaffrine</span><br><span>Elle parle français et wolof.</span></div>
+    </div>
+
+    <section>
+      <h3 class="section-title">Quel jour ?</h3>
+      <div class="days" aria-label="Jours proposés">
+        <div class="d"><small>Lun</small><b>12</b></div>
+        <div class="d on"><small>Mar</small><b>13</b></div>
+        <div class="d"><small>Mer</small><b>14</b></div>
+        <div class="d"><small>Jeu</small><b>15</b></div>
+        <div class="d"><small>Ven</small><b>16</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">À quelle heure ?</h3>
+      <p class="section-sub">Mardi 13 oct. · horaires donnés par Khady</p>
+      <div class="chips">
+        <span class="chip off">9 h</span>
+        <span class="chip">10 h 30</span>
+        <span class="chip on"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="m5 12 5 5 9-10"/></svg>15 h</span>
+        <span class="chip">16 h 30</span>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">Comment vous parlez ?</h3>
+      <div class="modes">
+        <div class="mode on"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#015AA9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><b>Par téléphone</b><span>Elle t’appelle<br>au <span style="white-space:nowrap">+221 77 123 45 67</span></span></div>
+        <div class="mode"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#445972" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><b>Sur place</b><span>À Kaffrine, à 38 km de chez toi</span></div>
+      </div>
+      <p class="source">Disponibilités de Khady · mises à jour le 6 oct.</p>
+    </section>
+  </div>
+
+  <div class="bottom">
+    <div class="actions"><div class="btn primary grow">Confirmer mardi à 15 h</div><div class="listen lg" aria-label="Écouter"><svg width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div></div>
+    <p class="note">Tu peux changer ou annuler jusqu’à la veille.</p>
+  </div>
+</main>
+</body>
+</html>

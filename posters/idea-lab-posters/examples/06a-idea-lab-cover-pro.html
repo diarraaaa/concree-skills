@@ -1,0 +1,48 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Idea Lab — cover carrousel (pro)</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:#f3f1ee;--ink:#14212e;--navy:#0c1b2a;--green:#2fa84f;--yellow:#f5a623;--red:#e8503a;--teal:#1e8e6e;--char:#1c1c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d6;font-family:"Poppins","Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px 60px;gap:12px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.slide{position:relative;overflow:hidden;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{opacity:.22;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.5) 1px,transparent 1.2px);background-size:5px 5px}
+.tri{position:absolute;width:0;height:0;border-style:solid;border-color:transparent}
+img{display:block}
+
+.slide{width:1080px;height:1080px;zoom:0.62}
+
+.cv{background:radial-gradient(800px 640px at 100% 0%,rgba(245,166,35,.30),transparent 60%),radial-gradient(760px 700px at 0% 100%,rgba(47,168,79,.26),transparent 62%),linear-gradient(160deg,#faf8f5,#efece7)}
+.tris{opacity:.12;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%231e8e6e' stroke-width='3'><path d='M20 170 L70 80 L120 170Z'/><path d='M120 70 L150 20 L180 70Z'/><circle cx='40' cy='40' r='14'/></g></svg>");background-size:210px 210px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 85% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse 80% 70% at 85% 30%,#000,transparent 75%)}
+.wm{position:absolute;right:-120px;top:130px;width:620px;opacity:.07;transform:rotate(-8deg)}
+.logo{position:absolute;left:52px;top:42px;height:128px}
+.sp{position:absolute;right:56px;top:54px;height:44px}
+.eyebrow{position:absolute;right:56px;top:178px;text-align:right}
+.e1{font:700 31px "Space Grotesk";letter-spacing:7px;color:transparent;-webkit-text-stroke:1.4px #9d9d96}
+.e2{font:700 36px "Space Grotesk";letter-spacing:6px;margin-top:8px;color:var(--navy)}
+.hl{position:absolute;left:590px;right:50px;top:410px;font:800 66px/1.06 "Poppins";letter-spacing:-1.5px;color:var(--navy)}
+.hl b{background:linear-gradient(90deg,var(--teal),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ringwrap{position:absolute;left:-170px;bottom:150px;width:740px;height:740px}
+.ring{position:absolute;inset:0;border-radius:50%;padding:12px;background:conic-gradient(from 210deg,var(--yellow),var(--red),var(--green),var(--yellow));box-shadow:0 30px 70px rgba(12,27,42,.32)}
+.ring>div{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#fff}
+.ring img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.ring2{position:absolute;inset:-34px;border-radius:50%;border:2px dashed rgba(12,27,42,.22)}
+.pill{position:absolute;right:50px;bottom:170px;width:560px;background:linear-gradient(135deg,#12283b,#0a1622);color:#fff;border-radius:46px;padding:40px 44px 40px 128px;font:500 28px/1.38 "Poppins";box-shadow:0 22px 50px rgba(12,27,42,.38),inset 0 1px 0 rgba(255,255,255,.18)}
+.pill::before{content:"→";position:absolute;left:38px;top:50%;transform:translateY(-52%);font-size:62px;font-weight:300;color:var(--yellow)}
+.bar{position:absolute;left:36px;right:36px;bottom:20px;height:118px;border-radius:34px;background:rgba(255,255,255,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.9);box-shadow:0 14px 34px rgba(0,0,0,.10);display:grid;place-items:center}
+.bar img{height:92px}
+</style></head><body>
+<p class="note">Idea Lab — cover carrousel (pro) · exemple fictif · photos et logos réels (voir assets/photos/credits.json, assets/people/credits.json)</p>
+<div class="slide cv" data-od-id="carousel-cover">
+<div class="layer tris"></div><img class="wm" src="../assets/logo-idealab.png" alt="" aria-hidden="true" />
+<img class="logo" src="../assets/logo-idealab.png" alt="Idea Lab" /><img class="sp" src="../assets/concree-logo.svg" alt="CONCREE" />
+<div class="eyebrow"><div class="e1">APPEL A CANDIDATURE</div><div class="e2">COHORTE 12</div></div>
+<div class="tri" style="right:180px;top:332px;border-width:0 0 74px 64px;border-bottom-color:var(--yellow)"></div>
+<div class="tri" style="right:70px;top:318px;border-width:0 52px 88px 52px;border-bottom-color:var(--red)"></div>
+<div class="tri" style="right:46px;top:604px;border-width:40px 0 40px 80px;border-left-color:var(--green);transform:rotate(-24deg)"></div>
+<div class="hl" data-od-id="cover-headline"><b>Agriculture</b> et résilience climatique</div>
+<div class="ringwrap"><div class="ring2"></div><div class="ring"><div><img src="../assets/photos/photo-agricultrice-champ.jpg" alt="Agricultrice dans un champ (photo réelle)" /></div></div></div>
+<div class="pill" data-od-id="cover-cta">Possibilité d'accéder à une subvention d'amorçage pour les lauréats</div>
+<div class="bar"><img src="../assets/partners-cover-strip.png" alt="MESRI, KOICA, KPC" /></div>
+<div class="layer grain"></div></div>
+</body></html>

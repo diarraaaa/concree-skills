@@ -1,0 +1,54 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>YEAH — Webinaire</title><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0}img{display:block}
+body{background:#cfd3d0;font-family:"Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 12px 60px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.poster{position:relative;overflow:hidden;flex:none;color:#fff;box-shadow:0 24px 60px rgba(0,0,0,.35);zoom:.7}
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{opacity:.16;mix-blend-mode:overlay;background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1.2px);background-size:5px 5px}
+.mq{position:absolute;z-index:20;font:700 13px "Open Sans";letter-spacing:2px;color:#fff;background:rgba(232,60,60,.92);padding:7px 14px;border-radius:20px}
+.poster{width:1080px;height:1350px;zoom:0.7}
+:root{--gold:#f5a623;--gold2:#ffd36a;--orange:#ff8a1f}
+.poster{background:radial-gradient(800px 700px at 100% 0%,rgba(255,138,31,.30),transparent 60%),radial-gradient(900px 800px at 0% 60%,rgba(40,170,120,.30),transparent 62%),linear-gradient(170deg,#0d5b46,#06382c 40%,#031b15)}
+.ph{background:url(../assets/photos/photo-noix-cajou.jpg) 50% 40%/cover;opacity:.30;mix-blend-mode:luminosity;-webkit-mask-image:radial-gradient(ellipse 70% 55% at 30% 80%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 55% at 30% 80%,#000 20%,transparent 75%)}
+.leaves{opacity:.08;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><g fill='none' stroke='white' stroke-width='3' stroke-linecap='round'><path d='M20 120 C20 80 40 50 70 45 C70 85 50 115 20 120Z'/><path d='M20 120 L58 62'/><path d='M100 60 C100 30 115 14 135 12 C135 40 122 56 100 60Z'/></g></svg>");background-size:150px 150px}
+.cjs{position:absolute;left:52px;top:44px;height:60px}.mcf{position:absolute;right:52px;top:34px;height:92px}
+.yeah{position:absolute;left:50%;top:136px;transform:translateX(-50%);height:88px}
+.mq{right:52px;top:136px;z-index:20}
+.badge{position:absolute;left:50%;top:252px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;padding:12px 34px;border-radius:60px;border:1.5px solid rgba(255,211,106,.65);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);font:700 28px "Fredoka";letter-spacing:2px;white-space:nowrap}
+.badge i{width:14px;height:14px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 14px #ff3b3b;display:block}
+h1{position:absolute;left:56px;right:56px;top:326px;text-align:center;font:700 80px/1 "Fredoka";letter-spacing:-1.5px;background:linear-gradient(180deg,#ffe28a,#f5a623 60%,#ff8a1f);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+.sub{position:absolute;left:100px;right:100px;top:430px;text-align:center;font:500 29px/1.3 "Fredoka";color:#fff}
+.win{position:absolute;left:56px;right:56px;top:520px;height:460px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);box-shadow:0 26px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3);padding:18px}
+.bar{display:flex;align-items:center;gap:8px;height:26px;margin-bottom:12px}.bar i{width:12px;height:12px;border-radius:50%;display:block}
+.bar span{margin-left:auto;font:600 14px "Fredoka";letter-spacing:2px;background:#ff3b3b;padding:3px 12px;border-radius:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;height:376px}
+.tile{position:relative;border-radius:20px;overflow:hidden;background:#0a3a2e;box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+.tile:first-child{box-shadow:0 0 0 3px var(--gold),0 0 30px rgba(245,166,35,.5)}
+.tile img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent)}
+.tile div{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;font:700 21px "Fredoka";line-height:1.1}.tile small{display:block;font:500 13.5px "Open Sans";opacity:.9;margin-top:2px}
+.tile svg{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.45);border-radius:50%;padding:5px;z-index:2;width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.ag{position:absolute;left:56px;right:56px;top:1000px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ag div{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,211,106,.4);border-radius:22px;padding:14px 18px}
+.ag b{display:block;font:700 30px "Fredoka";color:var(--gold2)}.ag span{font:600 17px "Open Sans";opacity:.92}
+.cta{position:absolute;left:56px;top:1128px;display:flex;align-items:center;gap:20px}
+.btn{background:linear-gradient(90deg,var(--orange),#ffb347);color:#2a1700;font:700 28px "Fredoka";padding:22px 40px;border-radius:50px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.cta small{font:600 18px "Open Sans";max-width:300px;line-height:1.35}
+.foot{position:absolute;left:0;right:0;bottom:0;height:130px;background:#fff;border-radius:48px 48px 0 0;display:grid;place-items:center;box-shadow:0 -14px 40px rgba(0,0,0,.25)}
+.foot img{height:96px;clip-path:inset(8px 10px 8px 10px)}
+</style></head><body><p class="note">YEAH — Webinaire · exemple fictif · maquette (photos illustratives)</p><div class="poster" data-od-id="poster-canvas">
+<div class="layer ph"></div><div class="layer leaves"></div>
+<img class="cjs" src="../assets/logo-cjs.png" alt="" /><img class="mcf" src="../assets/logo-mastercard-foundation.png" alt="" /><img class="yeah" src="../assets/logo-yeah.png" alt="YEAH" />
+<div class="mq">MAQUETTE · PHOTOS ILLUSTRATIVES</div>
+<div class="badge"><i></i>WEBINAIRE · ZOOM</div>
+<h1>L'Anacarde à l'export</h1><p class="sub">Normes, certifications et premiers contrats : par où commencer ?</p>
+<div class="win"><div class="bar"><i style="background:#ff6b6b"></i><i style="background:#ffd36a"></i><i style="background:#7be08a"></i><span>EN DIRECT</span></div>
+<div class="grid">
+<div class="tile"><img src="../assets/people/moderatrice.jpg" alt=""/><div>Aïssatou Ndiaye<small>Modératrice · YEAH</small></div><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+<div class="tile"><img src="../assets/people/panel-a.jpg" alt=""/><div>Moussa Fall<small>Fondateur, AgroCajou SA</small></div><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+<div class="tile"><img src="../assets/people/panel-b.jpg" alt=""/><div>Khady Sow<small>Cheffe de projet export</small></div><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+<div class="tile"><img src="../assets/people/panel-c.jpg" alt=""/><div>Ibrahima Diop<small>Expert filières agricoles</small></div><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+</div></div>
+<div class="ag"><div><b>17h00</b><span>Ouverture</span></div><div><b>17h15</b><span>Table ronde</span></div><div><b>18h00</b><span>Questions / réponses</span></div></div>
+<div class="cta"><div class="btn">S'inscrire gratuitement</div><small>Jeudi 12 Mars 2026 · lien Zoom envoyé par e-mail</small></div>
+<div class="foot"><img src="../assets/partners-yeah-strip.png" alt="" /></div>
+<div class="layer grain"></div></div></body></html>

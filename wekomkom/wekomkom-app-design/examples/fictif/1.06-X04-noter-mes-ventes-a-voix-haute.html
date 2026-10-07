@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- 1.06-X04 · Noter mes ventes à voix haute (fictif) — FICTIONAL conversation screen of 1.06 Ma préparation (ventes à noter): Adia writes down what the person
+     says. Voice first (micro + paperclip in the composer), one question at a time, a total in orange, source = « dit par toi ».
+     The entries help prepare a request later (ventes notées); no dashboard. Placeholders only. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Noter mes ventes</title>
+<link rel="stylesheet" href="../../assets/wekomkom-tokens.css">
+<link rel="stylesheet" href="../../assets/wekomkom-components.css">
+<style>
+  .thread { display: flex; flex-direction: column; gap: var(--wk-space-15); }
+  .msg-adia .who { display: flex; align-items: center; gap: var(--wk-space-10); }
+  .msg-adia .who b { font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .msg-me .src { display: block; margin-top: 6px; font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .list { display: flex; flex-direction: column; }
+  .sale { display: flex; align-items: center; gap: var(--wk-space-10); padding: 12px 0; border-bottom: 1px solid var(--wk-border-subtle); }
+  .sale:last-child { border-bottom: 0; }
+  .sale .txt { flex: 1; min-width: 0; }
+  .sale .txt b { display: block; font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); }
+  .sale .txt span { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+  .sale .amount { font: 700 14px/20px var(--wk-font); color: var(--wk-fg-title); white-space: nowrap; }
+  .total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; border-top: 1px solid var(--wk-border-default); margin-top: 4px; }
+  .total small { font: 600 12px/16px var(--wk-font); color: var(--wk-fg-muted); }
+  .total b { font: 700 20px/24px var(--wk-font); color: var(--wk-fg-attention); white-space: nowrap; }
+  .wave { display: flex; align-items: center; gap: 3px; height: 28px; flex: 1; }
+  .wave i { width: 3px; border-radius: 2px; background: var(--wk-blue-600); }
+  .composer .clip { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--wk-icon-muted); flex: none; }
+  .quick { margin-top: var(--wk-space-10); }
+</style>
+</head>
+<body>
+<main class="screen fixed" aria-label="Noter mes ventes à voix haute">
+  <div class="statusbar"><span>9:41</span><span class="sys">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#000610"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#000610" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#000610"/><rect x="25" y="4.5" width="1.5" height="4" rx=".75" fill="#000610" opacity=".4"/></svg>
+  </span></div>
+
+  <header class="header">
+    <div class="round sm" aria-label="Retour"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+    <div class="who"><span class="avatar adia">A</span><div><b>Adia</b><small>Tes ventes du jour</small></div></div>
+    <div class="round" aria-label="Écouter la conversation"><svg width="16" height="16" viewBox="0 0 24 24" fill="#445972"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></div>
+  </header>
+
+  <div class="content thread" style="padding-bottom:110px">
+    <div class="msg-adia">
+      <p>Dis-moi ce que tu as vendu aujourd’hui. Je note, tu corriges si besoin.</p>
+      <div class="listen-label"><span class="listen"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></svg></span>Écouter</div>
+    </div>
+
+    <div class="msg-me">« Douze sachets de thiakry au marché, dix-huit mille. Et cinq kilos d’arraw à Adja, quinze mille. »
+      <span class="src">Dit par toi · voix · 9 h 12</span></div>
+
+    <div class="msg-adia">
+      <p>J’ai noté deux ventes. C’est bien ça ?</p>
+      <div class="card tight" style="box-shadow:none">
+        <div class="list">
+          <div class="sale"><div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 14H7L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div><div class="txt"><b>12 sachets de thiakry</b><span>Marché de Koungheul</span></div><span class="amount">18 000 FCFA</span></div>
+          <div class="sale"><div class="tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 14H7L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div><div class="txt"><b>5 kg d’arraw</b><span>Saveurs du Saloum, Adja</span></div><span class="amount">15 000 FCFA</span></div>
+        </div>
+        <div class="total" style="padding-bottom:12px"><small>Total du jour</small><b>33 000 FCFA</b></div>
+      </div>
+      <div class="quick"><span>Oui, c’est ça</span><span>Je corrige</span></div>
+    </div>
+  </div>
+
+  <div class="composer">
+    <span class="clip" aria-label="Joindre un fichier"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21 11-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"/></svg></span>
+    <span>Dis ou écris une vente…</span>
+    <div class="mic" aria-label="Parler"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+  </div>
+</main>
+</body>
+</html>

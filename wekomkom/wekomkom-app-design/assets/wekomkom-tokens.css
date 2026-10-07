@@ -1,0 +1,164 @@
+/* Wekomkom design tokens — generated from the Figma file "Design wekomkom (Copy)"
+   (zyYKIr49PoDeO9vroOG27F), variable collections Color, Dimension, Motion and the
+   local text/effect/paint styles. Naming follows the file: role names in English,
+   prefixed --wk-. Primitives are listed for reference; screens use the role tokens. */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Primitives (do not use directly in screens) ---------- */
+  --wk-blue-50: #EAF4FD;  --wk-blue-75: #E7F3FA;  --wk-blue-100: #DDE9F5;
+  --wk-blue-500: #0958A5; --wk-blue-600: #015AA9; --wk-blue-900: #03345E;
+  --wk-green-50: #F7FFF3; --wk-green-100: #E8F5E1; --wk-green-500: #59B224; --wk-green-700: #357A11;
+  --wk-orange-500: #FF9900; --wk-orange-700: #A15C00;
+  --wk-red-500: #F73029; --wk-red-600: #FC121B;
+  --wk-sand-100: #EFE3D2;
+  --wk-slate-0: #FFFFFF;  --wk-slate-25: #F9F9FA; --wk-slate-40: #F4F6F8; --wk-slate-50: #F1F5FA;
+  --wk-slate-75: #F1F4F6; --wk-slate-100: #E2E7EA; --wk-slate-150: #DFE5EC; --wk-slate-300: #B5C1D0;
+  --wk-slate-500: #6E7F93; --wk-slate-550: #64748B; --wk-slate-600: #5E6F86; --wk-slate-700: #445972;
+  --wk-slate-850: #22364D; --wk-slate-900: #223245; --wk-slate-950: #192125; --wk-night-1000: #000610;
+
+  /* ---------- Color roles ---------- */
+  --wk-bg-canvas: var(--wk-slate-0);
+  --wk-bg-surface: var(--wk-slate-0);
+  --wk-bg-surface-subtle: var(--wk-slate-25);
+  --wk-bg-surface-muted: var(--wk-slate-75);
+  --wk-bg-surface-sunken: var(--wk-slate-40);
+  --wk-bg-surface-inverse: var(--wk-slate-850);
+  --wk-bg-surface-inverse-raised: rgba(255, 255, 255, 0.06);
+  --wk-bg-brand-subtle: var(--wk-blue-50);
+  --wk-bg-selected: var(--wk-blue-75);
+  --wk-bg-scrim: rgba(0, 0, 0, 0.40);
+
+  --wk-fg-primary: var(--wk-slate-900);
+  --wk-fg-title: var(--wk-slate-850);
+  --wk-fg-secondary: var(--wk-slate-700);
+  --wk-fg-body: var(--wk-slate-550);
+  --wk-fg-muted: var(--wk-slate-600);
+  --wk-fg-disabled: var(--wk-slate-300);
+  --wk-fg-inverse: var(--wk-slate-0);
+  --wk-fg-inverse-muted: var(--wk-slate-150);
+  --wk-fg-brand: var(--wk-blue-500);
+  --wk-fg-action: var(--wk-blue-600);
+  --wk-fg-positive: var(--wk-green-700);
+  --wk-fg-positive-inverse: var(--wk-green-500);
+  --wk-fg-attention: var(--wk-orange-700);
+  --wk-fg-accent: var(--wk-orange-500);      /* amounts on dark cards only */
+  --wk-fg-critical: var(--wk-red-600);
+  --wk-fg-system: var(--wk-night-1000);
+
+  --wk-icon-primary: var(--wk-slate-900);
+  --wk-icon-secondary: var(--wk-slate-700);
+  --wk-icon-muted: var(--wk-slate-500);
+  --wk-icon-subtle: var(--wk-slate-300);
+  --wk-icon-brand: var(--wk-blue-500);
+  --wk-icon-action: var(--wk-blue-600);
+  --wk-icon-inverse: var(--wk-slate-0);
+  --wk-icon-positive: var(--wk-green-500);
+  --wk-icon-attention: var(--wk-orange-500);
+  --wk-icon-critical: var(--wk-red-600);
+
+  --wk-border-default: var(--wk-slate-100);
+  --wk-border-subtle: var(--wk-slate-150);
+  --wk-border-control: var(--wk-slate-150);
+  --wk-border-focus: var(--wk-blue-500);
+  --wk-border-selected: var(--wk-blue-500);
+  --wk-border-positive: var(--wk-green-500);
+  --wk-border-attention: var(--wk-orange-500);
+  --wk-border-info: var(--wk-blue-600);
+  --wk-border-critical: var(--wk-red-600);
+  --wk-border-inverse: rgba(223, 229, 236, 0.10);
+
+  --wk-action-primary: var(--wk-blue-500);
+  --wk-action-primary-hover: var(--wk-blue-600);
+  --wk-action-primary-pressed: var(--wk-blue-900);
+  --wk-action-secondary: var(--wk-slate-0);
+  --wk-action-secondary-pressed: var(--wk-slate-25);
+  --wk-action-selected: var(--wk-blue-600);
+  --wk-action-tint: rgba(1, 90, 169, 0.06);
+  --wk-action-tint-pressed: rgba(1, 90, 169, 0.10);
+  --wk-action-glass: rgba(0, 0, 0, 0.10);
+  --wk-action-disabled: var(--wk-slate-75);
+  --wk-action-critical: var(--wk-red-600);
+
+  --wk-control-selected: var(--wk-blue-500);
+  --wk-control-on: var(--wk-green-500);
+  --wk-control-off: var(--wk-slate-50);
+
+  --wk-status-positive-bg: rgba(89, 178, 36, 0.10);
+  --wk-status-positive-bg-subtle: rgba(89, 178, 36, 0.08);
+  --wk-status-attention-bg: rgba(255, 153, 0, 0.10);
+  --wk-status-attention-bg-subtle: rgba(255, 153, 0, 0.08);
+  --wk-status-info-bg: rgba(1, 90, 169, 0.08);
+  --wk-status-critical-bg: rgba(252, 18, 27, 0.08);
+  --wk-status-neutral-bg: var(--wk-slate-40);
+
+  --wk-decor-positive: var(--wk-green-500);
+  --wk-decor-attention: var(--wk-orange-500);
+  --wk-decor-notification: var(--wk-red-500);
+  --wk-decor-sand: var(--wk-sand-100);
+
+  /* ---------- Gradients (paint styles) ---------- */
+  --wk-gradient-brand: linear-gradient(90deg, #0958A5 0%, #59B224 100%);          /* Gradient/Marque horizontale */
+  --wk-gradient-brand-vertical: linear-gradient(180deg, #0958A5 0%, #59B224 100%);
+  --wk-gradient-canvas: linear-gradient(180deg, #EAF4FD 0%, #F7FFF3 40%, #FFFFFF 100%); /* Gradient/Fond — "l'aube" */
+  --wk-gradient-dark-card: linear-gradient(180deg, rgba(34, 54, 77, 0.50) 0%, #223245 100%); /* over a photo */
+  --wk-gradient-avatar: linear-gradient(135deg, #E8F5E1 0%, #EFE3D2 48%, #DDE9F5 100%);
+  --wk-gradient-adia: linear-gradient(90deg, #FF9900 24%, #59B224 69%);
+
+  /* ---------- Dimension ---------- */
+  --wk-space-0: 0px;   --wk-space-2: 2px;   --wk-space-5: 5px;   --wk-space-10: 10px;
+  --wk-space-15: 15px; --wk-space-20: 20px; --wk-space-25: 25px; --wk-space-30: 30px;
+  --wk-space-40: 40px; --wk-space-60: 60px; --wk-space-80: 80px;
+  --wk-gutter-mobile: 18px; --wk-gutter-tablet: 32px; --wk-gutter-desktop: 40px;
+  --wk-content-max: 1200px; --wk-reading-max: 640px; --wk-sidebar: 260px;
+
+  --wk-radius-xs: 5px;  --wk-radius-sm: 10px; --wk-radius-md: 15px; --wk-radius-lg: 20px;
+  --wk-radius-xl: 25px; --wk-radius-pill: 30px; --wk-radius-2xl: 40px; --wk-radius-full: 100px;
+
+  --wk-size-touch-min: 48px; --wk-size-control-lg: 50px; --wk-size-control-md: 42px;
+  --wk-size-control-compact: 38px; --wk-size-control-sm: 32px; --wk-size-badge: 24px;
+  --wk-size-icon-sm: 16px; --wk-size-icon-md: 20px; --wk-size-icon-lg: 24px;
+  --wk-size-icon-button-md: 40px;
+  --wk-size-avatar-sm: 32px; --wk-size-avatar-md: 40px; --wk-size-avatar-lg: 64px;
+  --wk-border-hairline: 1px; --wk-border-control-width: 1.5px; --wk-border-focus-width: 2px;
+
+  /* ---------- Elevation (effect styles) ---------- */
+  --wk-elevation-1: 0 4px 8px rgba(0, 0, 0, 0.05);                                 /* Card */
+  --wk-elevation-2: 0 0 6px rgba(0, 0, 0, 0.10);                                   /* Floating */
+  --wk-elevation-3: 0 4px 8px rgba(0, 0, 0, 0.05), 0 0 6px rgba(0, 0, 0, 0.10);    /* Overlay */
+  --wk-focus-ring: 0 0 0 2px #FFFFFF, 0 0 0 4px #0958A5;
+
+  /* ---------- Motion ---------- */
+  --wk-duration-instant: 100ms; --wk-duration-fast: 150ms;
+  --wk-duration-base: 220ms;    --wk-duration-slow: 320ms;
+  --wk-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --wk-ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --wk-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ---------- Type ---------- */
+  --wk-font: "Open Sans", system-ui, sans-serif;
+}
+
+/* ---------- Text styles (Figma name → class). Size/line-height in px. ---------- */
+.wk-title-page, .wk-title-greeting, .wk-title-section, .wk-title-tile { font: 700 20px/1.2 var(--wk-font); }
+.wk-title-card-large { font: 700 18px/24px var(--wk-font); }
+.wk-title-card, .wk-title-header, .wk-title-subsection { font: 700 16px/1.25 var(--wk-font); }
+.wk-body-large  { font: 500 16px/22px var(--wk-font); }
+.wk-body-message { font: 500 15px/22px var(--wk-font); }
+.wk-body-default, .wk-body-paragraph { font: 500 14px/20px var(--wk-font); }
+.wk-body-small  { font: 400 12px/16px var(--wk-font); }
+.wk-body-compact { font: 500 12px/16px var(--wk-font); }
+.wk-label-large { font: 700 16px/1.2 var(--wk-font); }
+.wk-label-medium, .wk-label-value, .wk-label-tab, .wk-label-navigation { font: 700 14px/1.2 var(--wk-font); }
+.wk-label-small { font: 700 12px/1.2 var(--wk-font); }
+.wk-meta, .wk-meta-pill { font: 600 12px/16px var(--wk-font); }
+.wk-meta-small, .wk-overline { font: 400 12px/16px var(--wk-font); }
+.wk-meta-caption { font: 500 11px/14px var(--wk-font); }
+.wk-number-stat { font: 700 24px/1.1 var(--wk-font); }
+.wk-number-medium { font: 700 20px/1.1 var(--wk-font); }
+.wk-display-number { font: 700 48px/1 var(--wk-font); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}

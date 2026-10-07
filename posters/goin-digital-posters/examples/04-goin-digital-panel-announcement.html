@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exemple — CONCREE poster skill (Pattern 4 : panel avec QR d'inscription)</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f5f5;
+    --fg: #000000;
+    --muted: #8c8c8c;
+    --border: #dbdbdb;
+    --accent: #ff9900;
+    --accent-secondary: #0a58a5;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--surface);
+    font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--fg);
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 16px 64px;
+  }
+  .meta-bar {
+    width: 100%;
+    max-width: 620px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .meta-bar strong { color: var(--fg); font-weight: 700; }
+  .meta-bar code {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: var(--fg);
+  }
+  .meta-bar a { color: var(--accent-secondary); }
+
+  .poster {
+    width: 620px;
+    max-width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #0b1620;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .poster__header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .logo-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    display: inline-flex;
+  }
+  .logo-card img { height: 18px; display: block; }
+  .funder-note {
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    text-align: right;
+    max-width: 130px;
+    line-height: 1.3;
+  }
+
+  .poster__box {
+    position: absolute;
+    top: 96px;
+    left: 20px;
+    width: 56%;
+    bottom: 260px;
+    border: 1.5px solid #e8e23a;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wordmark { font-weight: 800; font-size: 18px; }
+  .wordmark .hi { color: #e8e23a; }
+  .format-pill {
+    align-self: flex-start;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .headline {
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+  .headline .hi { color: #e8e23a; font-weight: 800; }
+  .date-block { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .date-block .day { font-size: 32px; font-weight: 800; color: #e8e23a; line-height: 1; }
+  .date-block .month { font-size: 12px; font-weight: 600; }
+  .meta-line { font-size: 11px; display: flex; align-items: center; gap: 6px; }
+  .meta-icon { width: 9px; height: 9px; border: 1.5px solid #e8e23a; border-radius: 2px; flex: none; }
+  .qr-row { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+  .qr {
+    width: 46px; height: 46px;
+    background:
+      repeating-linear-gradient(90deg, #fff 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(0deg, #fff 0 4px, transparent 4px 8px);
+    background-blend-mode: screen;
+    background-color: #0b1620;
+    border: 1px solid #e8e23a;
+    border-radius: 4px;
+    flex: none;
+  }
+  .qr-note { font-size: 9px; line-height: 1.3; color: rgba(255,255,255,0.75); }
+
+  .poster__photo {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 46%;
+    bottom: 210px;
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .poster__photo-note { font-size: 10px; color: var(--muted); text-align: center; padding: 0 10px; }
+
+  .credit-tag {
+    position: absolute;
+    right: 6%;
+    bottom: 214px;
+    background: #e8e23a;
+    color: #111827;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 10px;
+    max-width: 44%;
+  }
+  .credit-tag .label { font-size: 8px; text-transform: uppercase; opacity: 0.8; }
+  .credit-tag .name { font-weight: 800; font-size: 12px; display: block; }
+
+  .poster__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    color: var(--fg);
+    padding: 14px 20px 18px;
+    text-align: center;
+  }
+  .poster__footer .note { font-size: 10px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+
+  <div class="meta-bar">
+    <span>Exemple 4/5 — <strong>Pattern 4 : panel avec QR d'inscription</strong> (voir <code>../SKILL.md</code> et <code>../references/goin-digital-panel-announcement.md</code>).</span>
+    <span>QR et photo du panéliste : laissés en placeholders honnêtes — un vrai QR doit encoder un vrai lien d'inscription, et aucune photo réelle n'a été attribuée à un panéliste fictif. Palette de repli : accent CONCREE réinterprété en jaune sur fond marine, comme le pattern source. — <a href="index.html">Retour à l'index</a></span>
+  </div>
+
+  <div class="poster" data-od-id="poster-canvas" data-screen-label="Exemple — panel avec QR">
+    <div class="poster__header" data-od-id="poster-header">
+      <span class="logo-card"><img src="../assets/concree-logo.svg" alt="Logo CONCREE" /></span>
+      <span class="funder-note">{{Logos partenaires / financeurs réels}}</span>
+    </div>
+
+    <div class="poster__box" data-od-id="poster-info-box">
+      <div class="wordmark">{{Programme<span class="hi">'Nom</span>}}</div>
+      <span class="format-pill">PANEL</span>
+      <p class="headline">{{Titre de la session}} : <span class="hi">{{phrase clé mise en avant}}</span></p>
+      <div class="date-block">
+        <span class="day">{{JJ}}</span>
+        <span class="month">{{Mois AAAA}}</span>
+      </div>
+      <div class="meta-line"><span class="meta-icon" aria-hidden="true"></span>{{Lieu}}</div>
+      <div class="meta-line"><span class="meta-icon" aria-hidden="true"></span>{{HHhMM – HHhMM}}</div>
+      <div class="qr-row">
+        <span class="qr" aria-hidden="true" data-od-id="poster-qr-placeholder"></span>
+        <span class="qr-note">{{QR réel à générer vers le lien d'inscription}}<br/>Scannez pour vous inscrire</span>
+      </div>
+    </div>
+
+    <div class="poster__photo" data-od-id="poster-panelist-photo">
+      <span class="poster__photo-note">{{Photo réelle du panéliste}}</span>
+    </div>
+
+    <div class="credit-tag" data-od-id="poster-credit-tag">
+      <span class="label">Panéliste</span>
+      <span class="name">{{Nom Prénom}}</span>
+      <span>{{Titre / affiliation}}</span>
+    </div>
+
+    <div class="poster__footer" data-od-id="poster-footer">
+      <img src="../assets/concree-logo.svg" alt="Logo CONCREE" height="16" />
+      <div class="note">+ logos institutionnels réels</div>
+    </div>
+  </div>
+
+</body>
+</html>

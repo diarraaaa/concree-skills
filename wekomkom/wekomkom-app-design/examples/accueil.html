@@ -1,0 +1,151 @@
+<!doctype html>
+<!-- Example: 1.01-H01 · Premier accueil, rebuilt in HTML from the Wekomkom tokens.
+     Reference render: ../references/screens/accueil-premier.png
+     Copy this structure when generating new mobile screens for OpenDesign. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wekomkom · Accueil</title>
+<link rel="stylesheet" href="../assets/wekomkom-tokens.css">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #E9EDF2; font-family: var(--wk-font); display: grid; place-items: center; min-height: 100vh; padding: 24px 0; }
+
+  /* Gabarits/Écran mobile — 390 × 844, dawn gradient, 18 px gutters, floating tab bar 20 px from bottom */
+  .screen { position: relative; width: 390px; height: 844px; overflow: hidden; border-radius: 40px;
+            background: var(--wk-gradient-canvas); box-shadow: 0 20px 60px rgba(0,0,0,.18); }
+  .scroll { height: 100%; overflow-y: auto; padding: 0 var(--wk-gutter-mobile) 120px; scrollbar-width: none; }
+
+  /* Navigation/Barre d'état */
+  .status { height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px;
+            font: 600 17px/22px -apple-system, "SF Pro", var(--wk-font); color: var(--wk-fg-system); }
+  .status i { display: inline-block; width: 18px; height: 11px; margin-left: 6px; background: currentColor; border-radius: 2px; }
+
+  /* Navigation/En-tête · Accueil */
+  .header { display: flex; align-items: center; gap: var(--wk-space-10); padding: var(--wk-space-10) 0 var(--wk-space-15); }
+  .header .hello { flex: 1; }
+  .header .hello small { display: block; font: 500 12px/16px var(--wk-font); color: var(--wk-fg-secondary); }
+  .header .hello strong { font: 700 20px/1.2 var(--wk-font); color: var(--wk-fg-title); }
+  .avatar { width: 44px; height: 44px; border-radius: var(--wk-radius-full); background: var(--wk-gradient-avatar);
+            display: grid; place-items: center; font: 700 14px/1 var(--wk-font); color: var(--wk-fg-title);
+            border: 2px solid var(--wk-slate-0); box-shadow: var(--wk-elevation-1); }
+
+  /* Navigation/Raccourci — ring gradient when Nouveau=Oui, thin grey ring otherwise */
+  .shortcuts { display: flex; justify-content: space-between; margin-bottom: var(--wk-space-20); }
+  .shortcut { width: 76px; text-align: center; font: 700 12px/1.2 var(--wk-font); color: var(--wk-fg-secondary); }
+  .ring { width: 72px; height: 72px; margin: 0 auto 6px; border-radius: 50%; padding: 3px; background: var(--wk-gradient-brand); }
+  .ring.old { background: var(--wk-border-subtle); padding: 1.5px; }
+  .ring span { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
+               background: var(--wk-bg-surface-inverse); border: 3px solid var(--wk-slate-0); color: var(--wk-fg-inverse); font-size: 24px; }
+
+  /* Prochaine action/Démarrer · Surface=Sombre — the ONE dark card on this screen */
+  .next { position: relative; border-radius: var(--wk-radius-lg); padding: var(--wk-space-25) var(--wk-space-25) var(--wk-space-25);
+          background: var(--wk-gradient-dark-card), var(--wk-bg-surface-inverse); color: var(--wk-fg-inverse); margin-bottom: var(--wk-space-25); }
+  .next .row { display: flex; gap: var(--wk-space-15); align-items: center; margin-bottom: var(--wk-space-20); }
+  .gauge { width: 64px; height: 36px; border: 4px solid var(--wk-slate-0); border-bottom: 0; border-radius: 64px 64px 0 0; position: relative; flex: none; }
+  .gauge::after { content: ""; position: absolute; left: 28px; bottom: 0; width: 3px; height: 22px; background: var(--wk-fg-accent); border-radius: 2px; }
+  .next h2 { font: 700 18px/24px var(--wk-font); }
+  .next p { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-accent); margin-top: 4px; }
+  .actions { display: flex; gap: var(--wk-space-10); align-items: center; }
+
+  /* Actions/Bouton · Blanc (on dark) and Actions/Bouton écouter · Rond */
+  .btn { height: var(--wk-size-control-lg); border-radius: var(--wk-radius-pill); border: 0; padding: 0 var(--wk-space-20);
+         font: 700 14px/1 var(--wk-font); cursor: pointer; }
+  .btn.white { flex: 1; background: var(--wk-slate-0); color: var(--wk-blue-500); }
+  .btn.primary { background: var(--wk-action-primary); color: var(--wk-fg-inverse); }
+  .listen { width: 41px; height: 41px; border-radius: 50%; border: 0; background: var(--wk-gradient-brand); display: grid; place-items: center; flex: none; }
+  .listen::before { content: ""; border-left: 12px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+  .btn:focus-visible, .listen:focus-visible { outline: none; box-shadow: var(--wk-focus-ring); }
+
+  /* Cartes/Titre de section · Accueil + Actions/Lien · Pilule */
+  .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--wk-space-5); }
+  .section-title h3 { font: 700 20px/1.2 var(--wk-font); color: var(--wk-fg-title); }
+  .link-pill { height: 28px; padding: 0 var(--wk-space-10); border-radius: var(--wk-radius-pill); background: var(--wk-action-tint);
+               font: 700 14px/28px var(--wk-font); color: var(--wk-blue-500); text-decoration: none; }
+  .intro { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); margin-bottom: var(--wk-space-15); }
+
+  /* Opportunités/Carte opportunité — white, 1 px hairline, near-invisible shadow, radius 15 */
+  .card { background: var(--wk-bg-surface); border: 1px solid var(--wk-border-default); border-radius: var(--wk-radius-md);
+          box-shadow: var(--wk-elevation-1); padding: var(--wk-space-15); }
+  .card .top { display: flex; gap: var(--wk-space-15); }
+  .card .icon { width: 44px; height: 44px; flex: none; border-radius: var(--wk-radius-sm); background: var(--wk-bg-surface-muted); display: grid; place-items: center; }
+  .card .cat { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-action); text-transform: uppercase; letter-spacing: .2px; }
+  .card h4 { font: 700 16px/20px var(--wk-font); color: var(--wk-fg-title); margin: 2px 0 8px; }
+  .card .org { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-secondary); margin-bottom: 8px; }
+  .card .why { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-positive); }
+  .card .ready { display: flex; gap: var(--wk-space-10); align-items: center; margin-top: var(--wk-space-15);
+                  padding: var(--wk-space-10) var(--wk-space-15); border-radius: var(--wk-radius-sm); background: var(--wk-bg-surface-subtle); }
+  .card .ready b { display: block; font: 500 14px/18px var(--wk-font); color: var(--wk-fg-title); }
+  .card .ready small { font: 500 12px/16px var(--wk-font); color: var(--wk-fg-body); }
+
+  /* Navigation/Barre d'onglets — 356×63 capsule, active pill 160×50 */
+  .tabs { position: absolute; left: 17px; right: 17px; bottom: 20px; height: 63px; padding: 6px; display: flex; gap: 6px;
+          background: var(--wk-bg-surface-muted); border: 1px solid var(--wk-border-default); border-radius: var(--wk-radius-pill);
+          box-shadow: var(--wk-elevation-1); }
+  .tab { width: 80px; height: 50px; border-radius: var(--wk-radius-pill); background: var(--wk-slate-0); display: grid; place-items: center; color: var(--wk-icon-subtle); }
+  .tab.active { width: 160px; display: flex; gap: 8px; justify-content: center; align-items: center; background: var(--wk-action-selected);
+                color: var(--wk-fg-inverse); font: 700 14px/15px var(--wk-font); }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<main class="screen" aria-label="Accueil">
+  <div class="scroll">
+    <div class="status"><span>9:41</span><span><i></i><i></i><i style="width:24px"></i></span></div>
+
+    <header class="header">
+      <img src="../assets/logo-mark-color.svg" alt="Wekomkom" width="30" height="38">
+      <div class="hello"><small>Bonjour</small><strong>Aïssatou</strong></div>
+      <!-- Real photo in production (Cartes/Avatar · Photo); initials only as a stand-in. -->
+      <div class="avatar" aria-label="Mon compte">AD</div>
+    </header>
+
+    <nav class="shortcuts" aria-label="Raccourcis">
+      <a class="shortcut"><div class="ring"><span>★</span></div>Pour moi</a>
+      <a class="shortcut"><div class="ring old"><span>🎙</span></div>Komkomnews</a>
+      <a class="shortcut"><div class="ring"><span>⚡</span></div>Spotlight</a>
+      <a class="shortcut"><div class="ring"><span>⌖</span></div>Acteurs</a>
+    </nav>
+
+    <section class="next" aria-label="Prochaine action">
+      <div class="row">
+        <div class="gauge" aria-label="Presque prête"></div>
+        <div>
+          <h2>Commence par le prêt équipement</h2>
+          <p>Il manque : NINEA, prévisionnel</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn white">Préparer avec Adia</button>
+        <button class="listen" aria-label="Écouter"></button>
+      </div>
+    </section>
+
+    <div class="section-title"><h3>Pour toi, maintenant</h3><a class="link-pill" href="#">Voir tout</a></div>
+    <p class="intro">Classées pour maintenant : la date, la distance, ce qui te manque. Même quand tu n’es pas encore prête, tu les vois.</p>
+
+    <article class="card">
+      <div class="top">
+        <div class="icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#223245" stroke-width="1.8" stroke-linecap="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15H5.5C4.7 19 4 18.3 4 17.5v-12ZM20 5.5c0-.8-.7-1.5-1.5-1.5H13v15h5.5c.8 0 1.5-.7 1.5-1.5v-12Z"/></svg>
+        </div>
+        <div>
+          <div class="cat">Formation · vendredi 9 oct.</div>
+          <h4>Formation gestion, vendredi à Kaffrine</h4>
+          <div class="org">Centre d’appui de Kaffrine · gratuite, à 1 h</div>
+          <div class="why">Pour mieux suivre tes ventes et tes dépenses</div>
+        </div>
+      </div>
+      <div class="ready"><div><b>Tu peux t’inscrire maintenant</b><small>Ouverte à toutes, sans papiers à fournir.</small></div></div>
+    </article>
+  </div>
+
+  <nav class="tabs" aria-label="Navigation principale">
+    <a class="tab active"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10.5V20a1 1 0 0 0 1 1h5v-6h6v6h5a1 1 0 0 0 1-1v-9.5L12 3Z"/></svg>Accueil</a>
+    <a class="tab" aria-label="Ma carte"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3Zm2 2v4h4V5H5Zm8-2h8v8h-8V3Zm2 2v4h4V5h-4ZM3 13h8v8H3v-8Zm2 2v4h4v-4H5Zm8-2h3v3h-3v-3Zm5 0h3v3h-3v-3Zm-5 5h3v3h-3v-3Zm5 0h3v3h-3v-3Z"/></svg></a>
+    <a class="tab" aria-label="Explorer"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg></a>
+  </nav>
+</main>
+</body>
+</html>

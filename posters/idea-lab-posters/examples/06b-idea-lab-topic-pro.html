@@ -1,0 +1,40 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Idea Lab — slide thématique (pro)</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:#f3f1ee;--ink:#14212e;--navy:#0c1b2a;--green:#2fa84f;--yellow:#f5a623;--red:#e8503a;--teal:#1e8e6e;--char:#1c1c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d9d9d6;font-family:"Poppins","Open Sans",system-ui,Segoe UI,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 12px 60px;gap:12px}
+.note{font-size:12px;color:#555;max-width:1080px;width:100%}
+.slide{position:relative;overflow:hidden;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{opacity:.22;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.5) 1px,transparent 1.2px);background-size:5px 5px}
+.tri{position:absolute;width:0;height:0;border-style:solid;border-color:transparent}
+img{display:block}
+
+.slide{width:1080px;height:1080px;zoom:0.62}
+
+.tp{background:radial-gradient(800px 600px at 0% 100%,rgba(245,166,35,.28),transparent 62%),radial-gradient(700px 600px at 100% 0%,rgba(47,168,79,.22),transparent 60%),linear-gradient(160deg,#faf8f5,#efece7)}
+.tris{opacity:.12;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%231e8e6e' stroke-width='3'><path d='M20 170 L70 80 L120 170Z'/><path d='M120 70 L150 20 L180 70Z'/><circle cx='40' cy='40' r='14'/></g></svg>");background-size:210px 210px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 80% 20%,#000,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 80% 20%,#000,transparent 75%)}
+.bignum{position:absolute;right:30px;top:120px;font:800 520px/0.8 "Space Grotesk";letter-spacing:-20px;color:transparent;-webkit-text-stroke:2px rgba(12,27,42,.10)}
+.logo{position:absolute;left:52px;top:42px;height:128px}
+.sp{position:absolute;right:56px;top:54px;height:44px}
+.hl{position:absolute;left:470px;right:50px;top:230px;font:800 66px/1.06 "Poppins";letter-spacing:-1.5px;color:var(--navy)}
+.hl b{background:linear-gradient(90deg,var(--red),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ph{position:absolute;left:0;top:400px;bottom:110px;width:440px;border-radius:0 70px 70px 0;overflow:hidden;box-shadow:0 26px 60px rgba(12,27,42,.35)}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(47,168,79,.25),rgba(12,27,42,.35))}
+.phbadge{position:absolute;left:300px;top:370px;width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--red));display:grid;place-items:center;font:800 54px "Space Grotesk";color:#fff;box-shadow:0 14px 30px rgba(232,80,58,.45);z-index:3;border:6px solid #faf8f5}
+.card{position:absolute;left:400px;right:50px;bottom:150px;background:linear-gradient(135deg,rgba(18,40,59,.96),rgba(10,22,34,.96));color:#fff;border-radius:44px;padding:52px 56px;font:500 30px/1.45 "Poppins";box-shadow:0 22px 50px rgba(12,27,42,.4),inset 0 1px 0 rgba(255,255,255,.18)}
+.dots{position:absolute;right:56px;bottom:52px;display:flex;gap:12px;align-items:center;font:700 24px "Space Grotesk";color:var(--navy)}
+.dots i{width:12px;height:12px;border-radius:50%;background:#c8c8c2;display:block}.dots i.on{width:34px;border-radius:8px;background:var(--navy)}
+</style></head><body>
+<p class="note">Idea Lab — slide thématique (pro) · exemple fictif · photos et logos réels (voir assets/photos/credits.json, assets/people/credits.json)</p>
+<div class="slide tp" data-od-id="carousel-topic">
+<div class="layer tris"></div><div class="bignum" aria-hidden="true">02</div>
+<img class="logo" src="../assets/logo-idealab.png" alt="Idea Lab" /><img class="sp" src="../assets/concree-logo.svg" alt="CONCREE" />
+<div class="tri" style="right:70px;top:610px;border-width:0 0 80px 70px;border-bottom-color:var(--yellow)"></div>
+<div class="hl" data-od-id="topic-headline">Soutien aux jeunes <b>agri-entrepreneurs</b></div>
+<div class="ph"><img src="../assets/photos/photo-jeune-plant.jpg" alt="Jeune plant mis en terre (photo réelle)" /></div><div class="phbadge">2</div>
+<div class="card" data-od-id="topic-body">Six mois d'accompagnement pour structurer l'offre, tester le marché auprès des producteurs et préparer la levée de fonds, avec des mentors du secteur agricole.</div>
+<div class="dots"><i></i><i class="on"></i><i></i><i></i></div>
+<div class="layer grain"></div></div>
+</body></html>
